@@ -1,4 +1,4 @@
-ReverseShellFULL
+# ReverseShellFULL
 Reverse Shell collection for: Pentesting - OSCP
 
 
