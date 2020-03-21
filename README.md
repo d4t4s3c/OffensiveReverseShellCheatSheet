@@ -1,4 +1,4 @@
-# Reverse Shell ######(Netcat Listener)######
+# Reverse Shell ######(Netcat Listener)
 
 # Bash
 ```
