@@ -63,7 +63,7 @@
 
 * Xterm
 
-   ```bash
+   ```xterm
    xterm -display 192.168.1.2:443
    ```
 
