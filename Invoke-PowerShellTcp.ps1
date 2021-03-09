@@ -59,7 +59,6 @@ https://github.com/samratashok/nishang
         $Bind
 
     )
-
     
     try 
     {
