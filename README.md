@@ -1,5 +1,7 @@
 # Reverse Shell (Cheat Sheet)
 
+Pentesting | Red Team | CTFs | OSCP
+
 `Bash`
 
   ```cmd
