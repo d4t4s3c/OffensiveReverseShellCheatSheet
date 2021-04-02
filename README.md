@@ -1,6 +1,6 @@
 # `Reverse Shell (Cheat Sheet)`
 
-Pentesting - Red Team - CTFs - OSCP
+**Pentesting - Red Team - CTFs - OSCP**
 
 `Bash`
 
