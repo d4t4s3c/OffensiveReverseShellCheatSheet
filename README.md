@@ -1,7 +1,7 @@
 # `Reverse Shell (Cheat Sheet)`
-<font color=green>Reverse Shell Cheat Sheet</font>
 
 __Pentesting - Red Team - CTFs - OSCP__
+
 
 `Bash`
 
