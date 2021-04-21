@@ -96,7 +96,7 @@ __Pentesting - Red Team - CTFs - OSCP__
   
   * Install Now
   
-  * Activate PLugin
+  * Activate Plugin
   
   ---
   
