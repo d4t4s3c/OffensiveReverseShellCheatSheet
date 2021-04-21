@@ -87,15 +87,16 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```cmd
   root@kali:~# zip reverse.zip reverse.php
   ```
-  [Plugins]
+  * Plugins
   
-  [Add New]
+  * Add New
   
-  [Upload Plugin]
+  * Upload Plugin
   
-  [Install Now]
+  * Install Now
   
-  [Activate PLugin]
+  * Activate PLugin
+  
   ---
   
 `Perl`
