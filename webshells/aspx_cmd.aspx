@@ -37,5 +37,3 @@ Response.Write("</pre>");
 </form>
 </body>
 </HTML>
-<!-- Contributed by Dominic Chell (http://digitalapocalypse.blogspot.com/) -->
-<!--    http://michaeldaw.org   04/2007    -->
