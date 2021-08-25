@@ -19,8 +19,8 @@
     * [<kbd>HTTP 500 Internal Server Error</kbd>](#Shellshock-HTTP-500-Internal-Server-Error)
 - [<kbd>CMS</kbd>](#CMS)
   * [<kbd>WordPress</kbd>](#WordPress)
-  * [<kbd>October</kbd>](#October-CMS)
-  * [<kbd>Jenkins</kbd>](#Groovy-Jenkins)
+  * [<kbd>October</kbd>](#October)
+  * [<kbd>Jenkins</kbd>](#Jenkins)
 - [<kbd>Perl</kbd>](#Perl)
 - [<kbd>Python</kbd>](#Python)
 - [<kbd>Python3</kbd>](#Python3)
@@ -242,7 +242,7 @@
   
   * Activate Plugin
   
-  # <kbd>October CMS</kbd>
+  # <kbd>October</kbd>
   
   ```cmd
   function onstart(){
@@ -250,7 +250,7 @@
   }
   ```
   
-  # <kbd>Groovy Jenkins</kbd>
+  # <kbd>Jenkins</kbd>
 
   ```cmd
   String host="192.168.1.2";
