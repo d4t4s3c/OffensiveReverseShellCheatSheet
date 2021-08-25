@@ -146,7 +146,7 @@
   
   > /var/log/vsftpd.log
 
-  ```php
+  ```cmd
   root@kali:~# ftp 192.168.1.3
   Connected to 192.168.1.3.
   220 (vsFTPd 3.0.3)
