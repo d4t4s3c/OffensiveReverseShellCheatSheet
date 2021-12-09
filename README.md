@@ -25,6 +25,8 @@
   * [<kbd>WordPress</kbd>](#WordPress)
   * [<kbd>October</kbd>](#October)
   * [<kbd>Jenkins</kbd>](#Jenkins)
+    * [<kbd>Windows</kbd>](#Jenkins-Windows)
+    * [<kbd>Linux</kbd>](#Jenkins-Linux)
 - [<kbd>Perl</kbd>](#Perl)
 - [<kbd>Python</kbd>](#Python)
 - [<kbd>Python3</kbd>](#Python3)
@@ -303,7 +305,8 @@
   
   # <kbd>Jenkins</kbd>
   
-  `Windows` 
+  # <kbd>Jenkins Windows</kbd> 
+  
   ```cmd
   String host="192.168.1.2";
   int port=443;
@@ -316,8 +319,9 @@
   println(command.execute().text) 
   ```
   
-  `Linux`
-   ```cmd
+  # <kbd>Jenkins Linux</kbd>
+   
+  ```cmd
   String host="192.168.1.2";
   int port=443;
   String cmd="bash";
