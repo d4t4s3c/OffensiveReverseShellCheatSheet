@@ -1,4 +1,4 @@
-# `Reverse Shell Cheat Sheet `
+# `Offensive Reverse Shell (Cheat Sheet)`
 
 - [<kbd>Bash</kbd>](#Bash)
   * [<kbd>Bash URL Encoding</kbd>](#Bash-URL-Encoding)
