@@ -6,6 +6,7 @@
   * [<kbd>Netcat Linux</kbd>](#Netcat-Linux)
   * [<kbd>Netcat Windows</kbd>](#Netcat-Windows)
   * [<kbd>Netcat URL Encoding</kbd>](#Netcat-URL-Encoding)
+- [<kbd>cURL</kbd>](#cURL)
 - [<kbd>WebShell</kbd>](#WebShell)
   * [<kbd>Exif Data</kbd>](#Exif-Data)
   * [<kbd>ASP WebShell</kbd>](#ASP-WebShell)
