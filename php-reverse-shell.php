@@ -186,7 +186,4 @@ function printit ($string) {
 	}
 }
 
-?> 
-
-
-
+?>
