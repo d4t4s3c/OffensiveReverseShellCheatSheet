@@ -5,7 +5,7 @@
 - [<kbd>Netcat</kbd>](#Netcat)
   * [<kbd>Netcat Linux</kbd>](#Netcat-Linux)
       * [<kbd>-e</kbd>](#-e)
-      * [<kbd>-e [URL Encode]</kbd>](#-e-[URL-Encode])
+      * [<kbd>-e [URL Encode]</kbd>](#-e [URL-Encode])
       * [<kbd>-c</kbd>](#-c)
       * [<kbd>fifo</kbd>](#fifo)
       * [<kbd>fifo [URL Encode]</kbd>](#fifo-[URL-Encode])
