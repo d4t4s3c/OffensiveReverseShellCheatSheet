@@ -1583,4 +1583,4 @@ class MainClass
 
 "@;
 
-Invoke-ConPtyShell -RemoteIp 192.168.1.2 -RemotePort 443 -Rows 48 -Cols 189
+Invoke-ConPtyShell -RemoteIp 192.168.1.2 -RemotePort 443 -Rows 50 -Cols 187
