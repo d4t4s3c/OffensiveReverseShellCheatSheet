@@ -67,6 +67,8 @@
 
   ---
  
+ <img src="https://github.com/d4t4s3c/Offensive-Reverse-Shell-Cheat-Sheet/blob/master/img/separator.png">
+ 
   # <kbd>Bash</kbd>
  
   # <kbd>TCP</kbd>
