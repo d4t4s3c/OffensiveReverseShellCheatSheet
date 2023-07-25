@@ -1,7 +1,7 @@
 # `Offensive Reverse Shell (Cheat Sheet)`
 
 - [<kbd>Bash</kbd>](#Bash)
-  * [<kbd>Bash (URL Encode)</kbd>](#Bash-URL-Encode)
+  * [<kbd>Bash (URL Encode)</kbd>](#Bash URL Encode)
 - [<kbd>Netcat</kbd>](#Netcat)
   * [<kbd>Netcat Linux</kbd>](#Netcat-Linux)
       * [<kbd>-e</kbd>](#-e)
