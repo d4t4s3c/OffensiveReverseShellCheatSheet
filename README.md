@@ -1,4 +1,6 @@
-# `Offensive Reverse Shell (Cheat Sheet)`
+# Offensive Reverse Shell (Cheat Sheet)
+
+Collection of reverse shells for red team operation.
 
 - [<kbd>Bash</kbd>](#bash)
 - [<kbd>Netcat</kbd>](#netcat)
