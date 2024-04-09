@@ -2,7 +2,7 @@
 
 **Collection of reverse shells for red team operations.**
 
---
+---
 
 - [<kbd>Bash</kbd>](#bash)
 - [<kbd>Netcat</kbd>](#netcat)
