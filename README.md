@@ -1,6 +1,6 @@
 # Offensive Reverse Shell (Cheat Sheet)
 
-**Collection of reverse shells for red team operations.**
+**`Collection of reverse shells for red team operations.`**
 
 
 - [<kbd>Bash</kbd>](#bash)
