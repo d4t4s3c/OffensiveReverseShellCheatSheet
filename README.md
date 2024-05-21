@@ -1,8 +1,8 @@
-<center>
+<div align="center">
 # Offensive Reverse Shell (Cheat Sheet)
 
 **`Collection of reverse shells for red team operations.`**
-</center>
+</div>
 
 - [<kbd>Bash</kbd>](#bash)
 - [<kbd>Netcat</kbd>](#netcat)
