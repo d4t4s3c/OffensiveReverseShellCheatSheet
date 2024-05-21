@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Offensive Reverse Shell (Cheat Sheet)</h1>h1>
+<h1>Offensive Reverse Shell (Cheat Sheet)</h1>
 
 **`Collection of reverse shells for red team operations.`**
 </div>
