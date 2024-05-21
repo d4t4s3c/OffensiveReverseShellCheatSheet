@@ -1,6 +1,6 @@
 <div align="center">
 <h1>Offensive Reverse Shell (Cheat Sheet)</h1>
-<mark><h3>Collection of reverse shells for red team operations</h3></mark>
+<mark class="match"><h3>Collection of reverse shells for red team operations</h3></mark>
 </div>
 
 - [<kbd>Bash</kbd>](#bash)
