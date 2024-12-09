@@ -53,7 +53,7 @@
 - [<kbd>Msfvenom</kbd>](#msfvenom)
   * [<kbd>Web Payloads</kbd>](#web-payloads)
     * [<kbd>PHP</kbd>](#php-payload)
-    * [<kbd>WAR</kbd>](#war-payload)
+    * [<kbd>WAR (Tomcat)</kbd>](#war-payload)
     * [<kbd>JAR</kbd>](#jar-payload)
     * [<kbd>JSP</kbd>](#jsp-payload)
     * [<kbd>ASPX</kbd>](#aspx-payload)
