@@ -29,7 +29,7 @@ Welcome to the `Offensive Reverse Shell (Cheat Sheet)`, a comprehensive reposito
     - [SSH](#log-poisoning-ssh)
     - [FTP](#log-poisoning-ftp)
     - [HTTP](#log-poisoning-http)
-    - [RSYNC](#rsync-poisoning-http)
+    - [RSYNC](#log-poisoning-rsync)
 - [Server Side Template Injection (SSTI)</kbd>](#server-side-template-injection)
 - [UnrealIRCd</kbd>](#unrealircd)
 - [Exif Data</kbd>](#exif-data-reverse-shell)
