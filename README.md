@@ -5,6 +5,9 @@
 
 Welcome to the `Offensive Reverse Shell (Cheat Sheet)`, a comprehensive repository curated specifically for **Red Team Operations**, **Penetration Testing**, and **Security Research**. This repository contains a variety of **reverse shell** payloads crafted in different languages and configurations to suit diverse scenarios and environments.
 
+> [!WARNING]
+> The content of this repository is strictly intended for educational purposes and authorized security testing in controlled environments only.
+
 ## Table of Contents:
 
 - [Bash](#bash)
