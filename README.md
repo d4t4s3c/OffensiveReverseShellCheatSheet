@@ -7,7 +7,7 @@ Welcome to the **Offensive Reverse Shell (Cheat Sheet)**, a comprehensive reposi
 
 ## Table of Contents:
 
-- [<kbd>Bash</kbd>](#bash)
+- [Bash(#bash)
 - [<kbd>Netcat</kbd>](#netcat)
   * [<kbd>Netcat Linux</kbd>](#netcat-linux)
   * [<kbd>Netcat Windows</kbd>](#netcat-windows)
