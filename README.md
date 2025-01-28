@@ -7,6 +7,8 @@ Welcome to the **Offensive Reverse Shell (Cheat Sheet)**, a comprehensive reposi
 <br>
 <br>
 
+## Table of Contents
+
 - [<kbd>Bash</kbd>](#bash)
 - [<kbd>Netcat</kbd>](#netcat)
   * [<kbd>Netcat Linux</kbd>](#netcat-linux)
