@@ -1,4 +1,8 @@
 <h1>Offensive Reverse Shell (Cheat Sheet)</h1>
+
+![GitHub stars](https://img.shields.io/github/stars/d4t4s3c/OffensiveReverseShellCheatSheet?logoColor=yellow) ![GitHub forks](https://img.shields.io/github/forks/d4t4s3c/OffensiveReverseShellCheatSheet?logoColor=purple) ![GitHub watchers](https://img.shields.io/github/watchers/OffensiveReverseShellCheatSheet/RSAcrack?logoColor=green)</br>
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/d4t4s3c/OffensiveReverseShellCheatSheet) ![GitHub contributors](https://img.shields.io/github/contributors/d4t4s3c/OffensiveReverseShellCheatSheet)
+
 <h3>Collection of reverse shells for red team operations</h3>
 <br>
 <br>
