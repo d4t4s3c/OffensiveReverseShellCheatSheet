@@ -4,10 +4,12 @@
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/d4t4s3c/OffensiveReverseShellCheatSheet) ![GitHub contributors](https://img.shields.io/github/contributors/d4t4s3c/OffensiveReverseShellCheatSheet)
 
 Welcome to the **Offensive Reverse Shell (Cheat Sheet)**, a comprehensive repository curated specifically for **Red Team Operations**, **Penetration Testing**, and **Security Research**. This repository contains a variety of **reverse shell** payloads crafted in different languages and configurations to suit diverse scenarios and environments.
-<br>
+
 <br>
 
-## Table of Contents
+## Table of Contents:
+
+<br>
 
 - [<kbd>Bash</kbd>](#bash)
 - [<kbd>Netcat</kbd>](#netcat)
