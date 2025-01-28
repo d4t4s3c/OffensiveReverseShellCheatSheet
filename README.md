@@ -1,4 +1,4 @@
-<h1>Offensive Reverse Shell (Cheat Sheet)</h1>
+# Offensive Reverse Shell (Cheat Sheet)
 
 ![GitHub stars](https://img.shields.io/github/stars/d4t4s3c/OffensiveReverseShellCheatSheet?logoColor=yellow) ![GitHub forks](https://img.shields.io/github/forks/d4t4s3c/OffensiveReverseShellCheatSheet?logoColor=purple) ![GitHub watchers](https://img.shields.io/github/watchers/d4t4s3c/OffensiveReverseShellCheatSheet?logoColor=green)</br>
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/d4t4s3c/OffensiveReverseShellCheatSheet) ![GitHub contributors](https://img.shields.io/github/contributors/d4t4s3c/OffensiveReverseShellCheatSheet)
@@ -29,6 +29,7 @@ Welcome to the `Offensive Reverse Shell (Cheat Sheet)`, a comprehensive reposito
     - [SSH](#log-poisoning-ssh)
     - [FTP](#log-poisoning-ftp)
     - [HTTP](#log-poisoning-http)
+    - [RSYNC](#rsync-poisoning-http)
 - [Server Side Template Injection (SSTI)</kbd>](#server-side-template-injection)
 - [UnrealIRCd</kbd>](#unrealircd)
 - [Exif Data</kbd>](#exif-data-reverse-shell)
