@@ -3,7 +3,7 @@
 ![GitHub stars](https://img.shields.io/github/stars/d4t4s3c/OffensiveReverseShellCheatSheet?logoColor=yellow) ![GitHub forks](https://img.shields.io/github/forks/d4t4s3c/OffensiveReverseShellCheatSheet?logoColor=purple) ![GitHub watchers](https://img.shields.io/github/watchers/OffensiveReverseShellCheatSheet/RSAcrack?logoColor=green)</br>
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/d4t4s3c/OffensiveReverseShellCheatSheet) ![GitHub contributors](https://img.shields.io/github/contributors/d4t4s3c/OffensiveReverseShellCheatSheet)
 
-Welcome to the **Offensive Reverse Shell (Cheat Sheet)**, a comprehensive repository curated specifically for **Red Team Operations**, **Penetration Testing**, and **Security Research**. This repository contains a variety of **reverse shell** payloads crafted in different languages and configurations to suit diverse scenarios and environments.
+Welcome to the `Offensive Reverse Shell (Cheat Sheet)`, a comprehensive repository curated specifically for **Red Team Operations**, **Penetration Testing**, and **Security Research**. This repository contains a variety of **reverse shell** payloads crafted in different languages and configurations to suit diverse scenarios and environments.
 
 ## Table of Contents:
 
@@ -26,19 +26,19 @@ Welcome to the **Offensive Reverse Shell (Cheat Sheet)**, a comprehensive reposi
     - [SSH](#log-poisoning-ssh)
     - [FTP](#log-poisoning-ftp)
     - [HTTP](#log-poisoning-http)
-- [<kbd>Server Side Template Injection (SSTI)</kbd>](#server-side-template-injection)
-- [<kbd>UnrealIRCd</kbd>](#unrealircd)
-- [<kbd>Exif Data</kbd>](#exif-data-reverse-shell)
-- [<kbd>Shellshock</kbd>](#shellshock)
-  * [<kbd>SSH</kbd>](#shellshock-ssh)
-  * [<kbd>HTTP</kbd>](#shellshock-http)
-    * [<kbd>HTTP 500 Internal Server Error</kbd>](#shellshock-http-500-internal-server-error)
-- [<kbd>CMS</kbd>](#cms)
-  * [<kbd>WordPress</kbd>](#wordpress)
-  * [<kbd>October</kbd>](#october)
-  * [<kbd>Jenkins</kbd>](#jenkins)
-    * [<kbd>Windows</kbd>](#jenkins-windows)
-    * [<kbd>Linux</kbd>](#jenkins-linux)
+- [Server Side Template Injection (SSTI)</kbd>](#server-side-template-injection)
+- [UnrealIRCd</kbd>](#unrealircd)
+- [Exif Data</kbd>](#exif-data-reverse-shell)
+- [Shellshock</kbd>](#shellshock)
+  - [SSH](#shellshock-ssh)
+  - [HTTP](#shellshock-http)
+    - [HTTP 500 Internal Server Error](#shellshock-http-500-internal-server-error)
+- [CMS](#cms)
+  - [WordPress](#wordpress)
+  - [**October**](#october)
+  - [`Jenkins`](#jenkins)
+    - [Windows](#jenkins-windows)
+    - [Linux](#jenkins-linux)
 - [<kbd>Perl</kbd>](#perl)
 - [<kbd>Python</kbd>](#python)
 - [<kbd>Python3</kbd>](#python3)
