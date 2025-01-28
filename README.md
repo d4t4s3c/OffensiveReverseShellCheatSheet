@@ -451,9 +451,9 @@ nano plugin.php
 ```php
 <?php
   /**
-  * Plugin Name: Shelly
-  * Plugin URI: http://localhost
-  * Description: Love Shelly
+  * Plugin Name: Reverse Shell
+  * Plugin URI: http://wordpress.org
+  * Description: (Pwn3d!)
   * Version: 1.0
   * Author: d4t4s3c
   * Author URI: https://github.com/d4t4s3c
