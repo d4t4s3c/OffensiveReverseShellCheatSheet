@@ -7,10 +7,10 @@ Welcome to the **Offensive Reverse Shell (Cheat Sheet)**, a comprehensive reposi
 
 ## Table of Contents:
 
-- [**Bash**](#bash)
-- [<kbd>Netcat</kbd>](#netcat)
-  * [<kbd>Netcat Linux</kbd>](#netcat-linux)
-  * [<kbd>Netcat Windows</kbd>](#netcat-windows)
+- [Bash](#bash)
+- [Netcat](#netcat)
+  - [Netcat Linux](#netcat-linux)
+  - [Netcat Windows](#netcat-windows)
 - [<kbd>BusyBox</kbd>](#busybox)
 - [<kbd>cURL</kbd>](#curl)
 - [<kbd>Wget</kbd>](#wget)
