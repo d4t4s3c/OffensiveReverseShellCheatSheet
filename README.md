@@ -8,7 +8,7 @@ Welcome to the `Offensive Reverse Shell (Cheat Sheet)`, a comprehensive reposito
 > [!WARNING]
 > All content in this repository is intended strictly for educational purposes and authorized security testing in controlled environments only, whether real or CTF.
 
-## Table of Contents:
+## Table of Contents
 
 - [Bash](#bash)
 - [Netcat](#netcat)
