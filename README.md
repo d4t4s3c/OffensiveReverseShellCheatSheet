@@ -1,13 +1,9 @@
-<div align="center">
-
 # Offensive Reverse Shell (Cheat Sheet)
 
 ![GitHub stars](https://img.shields.io/github/stars/d4t4s3c/OffensiveReverseShellCheatSheet?logoColor=yellow) ![GitHub forks](https://img.shields.io/github/forks/d4t4s3c/OffensiveReverseShellCheatSheet?logoColor=purple) ![GitHub watchers](https://img.shields.io/github/watchers/d4t4s3c/OffensiveReverseShellCheatSheet?logoColor=green)</br>
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/d4t4s3c/OffensiveReverseShellCheatSheet) ![GitHub contributors](https://img.shields.io/github/contributors/d4t4s3c/OffensiveReverseShellCheatSheet)
 
 Welcome to the `Offensive Reverse Shell (Cheat Sheet)`, a comprehensive repository curated specifically for **Red Team Operations**, **Penetration Testing**, and **Security Research**. This repository contains a variety of **reverse shell** payloads crafted in different languages and configurations to suit diverse scenarios and environments.
-
-</div>
 
 > [!WARNING]
 > All content in this repository is intended strictly for educational purposes and authorized security testing in controlled environments only, whether real or CTF.
